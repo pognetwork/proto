@@ -1,17 +1,17 @@
 syntax = "proto3";
 package POG_RPC;
 
-service Greeter {
-  // Our SayHello rpc accepts HelloRequests and returns HelloReplies
-  rpc SayHello(HelloRequest) returns (HelloReply);
+service Account {
+  // GetBalance accepts BalanceRequests and returns BalanceReplies
+  rpc GetBalance(BalanceRequest) returns (BalanceReply);
 }
 
-message HelloRequest {
-  // Request message contains the name to be greeted
-  string name = 1;
+message BalanceRequest {
+  // Balance Request takes the address for query
+  bytes address = 1;
 }
 
-message HelloReply {
-  // Reply contains the greeting message
-  string message = 1;
+message BalanceReply {
+  // Reply contains the balance queried
+  uint64 balance = 1;
 }
