@@ -8,7 +8,7 @@ enum AccountType {
 
 message PrivateAccount {
   AccountType type = 1;
-  bytes address = 2;
+  string address = 2;
   bytes publicKey = 3;
   bytes privateKey = 4;
   uint32 votingPower = 5;
@@ -16,7 +16,7 @@ message PrivateAccount {
 
 message PublicAccount {
   AccountType type = 1;
-  bytes address = 2;
+  string address = 2;
   uint32 votingPower = 3;
 }
 
@@ -70,7 +70,7 @@ message Block {
     SigType signatureType = 2;
 
     // 24 bytes
-    bytes address = 3;
+    string address = 3;
 
     // the new account ballance after applying all transactions
     uint64 balance = 4;
