@@ -24,6 +24,9 @@ enum SigType { Ed25519 = 0; }
 enum BlockVersion { V1 = 0; }
 
 message Transaction {
+  // sha3 hash of data
+  bytes hash = 1;
+
   // Initialize a new Account
   message TxOpen { AccountType type = 1; };
 
@@ -43,7 +46,7 @@ message Transaction {
   // Block delegate assigns a new representative to an account
   message TxDelegate { bytes representative = 1; };
 
-  oneof transaction {
+  oneof data {
     TxOpen txOpen = 5;
     TxSend txSend = 6;
     TxClaim txCollect = 7;
