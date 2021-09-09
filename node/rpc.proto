@@ -5,7 +5,7 @@ service Account {
   // GetBalance accepts BalanceRequests and returns BalanceReplies
   rpc GetBalance(BalanceRequest) returns (BalanceReply);
   // GetNextBlockHeight uses an address to get the latest block index to then return the next index
-  rpc GetNextBlockHeight(GetNextBlockHeightRequest) returns (GetNextBlockHeightReply);
+  rpc GetNextBlockHeight(NextBlockHeightRequest) returns (NextBlockHeightReply);
 }
 
 message BalanceRequest {
@@ -18,10 +18,10 @@ message BalanceReply {
   uint64 balance = 1;
 }
 
-message GetNextBlockHeightRequest {
+message NextBlockHeightRequest {
   string address = 1;
 }
 
-message GetNextBlockHeightReply {
+message NextBlockHeightReply {
   uint64 nextHeight = 1;
 }
