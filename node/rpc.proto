@@ -4,6 +4,8 @@ package POG_RPC;
 service Account {
   // GetBalance accepts BalanceRequests and returns BalanceReplies
   rpc GetBalance(BalanceRequest) returns (BalanceReply);
+  // GetNextBlockHeight uses an address to get the latest block index to then return the next index
+  rpc GetNextBlockHeight(GetNextBlockHeightRequest) returns (GetNextBlockHeightReply);
 }
 
 message BalanceRequest {
@@ -14,4 +16,12 @@ message BalanceRequest {
 message BalanceReply {
   // Reply contains the balance queried
   uint64 balance = 1;
+}
+
+message GetNextBlockHeightRequest {
+  string address = 1;
+}
+
+message GetNextBlockHeightReply {
+  uint64 nextHeight = 1;
 }
