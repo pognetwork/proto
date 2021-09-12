@@ -6,6 +6,8 @@ service Account {
   rpc GetBalance(BalanceRequest) returns (BalanceReply);
   // GetNextBlockHeight uses an address to get the latest block index to then return the next index
   rpc GetNextBlockHeight(NextBlockHeightRequest) returns (NextBlockHeightReply);
+  // GetVotingPower uses an address to get the voting power of an account
+  rpc GetVotingPower(VotingPowerRequest) returns (VotingPowerReply);
 }
 
 message BalanceRequest {
@@ -24,4 +26,12 @@ message NextBlockHeightRequest {
 
 message NextBlockHeightReply {
   uint64 nextHeight = 1;
+}
+
+message VotingPowerRequest {
+  string address = 1;
+}
+
+message VotingPowerReply {
+  uint32 power = 1;
 }
