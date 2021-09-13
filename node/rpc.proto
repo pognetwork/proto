@@ -1,6 +1,8 @@
 syntax = "proto3";
 package POG_RPC;
 
+import "node/api.proto";
+
 service Account {
   // GetBalance accepts BalanceRequests and returns BalanceReplies
   rpc GetBalance(BalanceRequest) returns (BalanceReply);
@@ -8,6 +10,8 @@ service Account {
   rpc GetBlockHeight(BlockHeightRequest) returns (BlockHeightReply);
   // GetVotingPower uses an address to get the voting power of an account
   rpc GetVotingPower(VotingPowerRequest) returns (VotingPowerReply);
+  // GetBlockByID uses the hash of a block to get the data
+  rpc GetBlockByID(BlockByIDRequest) returns (BlockByIDReply);
 }
 
 message BalanceRequest {
@@ -35,4 +39,12 @@ message VotingPowerRequest {
 
 message VotingPowerReply {
   uint32 power = 1;
+}
+
+message BlockByIDRequest {
+  bytes hash = 1;
+}
+
+message BlockByIDReply {
+  Block block = 1;
 }
