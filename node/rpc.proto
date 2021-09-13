@@ -1,12 +1,13 @@
 syntax = "proto3";
-package POG_RPC;
+package RPC;
 
 import "node/api.proto";
 
 service Account {
   // GetBalance accepts BalanceRequests and returns BalanceReplies
   rpc GetBalance(BalanceRequest) returns (BalanceReply);
-  // GetNextBlockHeight uses an address to get the latest block index to then return the next index
+  // GetNextBlockHeight uses an address to get the latest block index to then
+  // return the next index
   rpc GetBlockHeight(BlockHeightRequest) returns (BlockHeightReply);
   // GetVotingPower uses an address to get the voting power of an account
   rpc GetVotingPower(VotingPowerRequest) returns (VotingPowerReply);
@@ -29,22 +30,12 @@ message BlockHeightRequest {
   optional bool getNext = 2;
 }
 
-message BlockHeightReply {
-  uint64 nextHeight = 1;
-}
+message BlockHeightReply { uint64 nextHeight = 1; }
 
-message VotingPowerRequest {
-  string address = 1;
-}
+message VotingPowerRequest { string address = 1; }
 
-message VotingPowerReply {
-  uint32 power = 1;
-}
+message VotingPowerReply { uint32 power = 1; }
 
-message BlockByIDRequest {
-  bytes hash = 1;
-}
+message BlockByIDRequest { bytes hash = 1; }
 
-message BlockByIDReply {
-  Block block = 1;
-}
+message BlockByIDReply { API.Block block = 1; }

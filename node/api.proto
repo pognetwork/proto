@@ -1,5 +1,5 @@
 syntax = "proto3";
-package POG_API;
+package API;
 
 enum AccountType {
   Managed = 0;

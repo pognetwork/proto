@@ -1,5 +1,5 @@
-#[path = "generated/pog_api.rs"]
+#[path = "generated/api.rs"]
 pub mod api;
 
-#[path = "generated/pog_rpc.rs"]
+#[path = "generated/rpc.rs"]
 pub mod rpc;
