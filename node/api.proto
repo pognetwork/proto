@@ -65,6 +65,10 @@ message Block {
   // this needs to be provided since account addresses are hashed public keys
   bytes publicKey = 5;
 
+  // seconds ellapsed since the unix epoch
+  // will be set by the first node recieving the transaction
+  uint64 timestamp = 7;
+
   // data is the field that will be signed and hashed to generate the values
   // above
   BlockData data = 6;
