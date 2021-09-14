@@ -6,6 +6,8 @@ APIs are append only. Fields that aren't used anymore can only be updated for ma
 
 ## Supported languages
 
+### Rust
+
 Currently prepackaged types are only provided for rust:
 
 `cargo.toml`
@@ -14,5 +16,9 @@ Currently prepackaged types are only provided for rust:
 [dependencies]
 pog-proto = {git = "https://github.com/pognetwork/proto"}
 ```
+
+Cargo pins dependencies, so after pushing a new change to this repo, be sure to run `$ cargo update` in the project depending on this. Also, remember to reload your IDE since the rust language server often doesn't pick up the changes in dependencies.
+
+### Typescript
 
 Typescript support will follow soon.
