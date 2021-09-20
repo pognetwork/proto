@@ -24,24 +24,18 @@ enum SigType { Ed25519 = 0; }
 enum BlockVersion { V1 = 0; }
 
 message Transaction {
-  // sha3 hash of data
-  bytes hash = 1;
-
   // Initialize a new Account
   message TxOpen { AccountType type = 1; };
 
   // Block send is a send transaction in the sender's account
   message TxSend {
-    bytes reviever = 1;
+    bytes receiver = 1;
     uint64 amount = 2;
     bytes data = 3;
   };
 
   // Block Claim collects a transaction from another account's block
-  message TxClaim {
-    bytes block = 1;
-    int64 transactionIndex = 2;
-  };
+  message TxClaim { bytes transactionID = 1; };
 
   // Block delegate assigns a new representative to an account
   message TxDelegate { bytes representative = 1; };
@@ -55,18 +49,16 @@ message Transaction {
 }
 
 message Block {
-  // SHA-3-256 hash of the block data
-  bytes hash = 2;
-
   // 64 bytes (for Ed25519, might be expanded later)
   bytes signature = 4;
 
   // 32 bytes (for Ed25519)
+  // account's public key
   // this needs to be provided since account addresses are hashed public keys
   bytes publicKey = 5;
 
-  // seconds ellapsed since the unix epoch
-  // will be set by the first node recieving the transaction
+  // seconds of UTC time since Unix epoch
+  // will be set by the first node receiving the transaction
   uint64 timestamp = 7;
 
   // data is the field that will be signed and hashed to generate the values
@@ -79,7 +71,7 @@ message Block {
     // 24 bytes
     string address = 3;
 
-    // the new account ballance after applying all transactions
+    // the new account balance after applying all transactions
     uint64 balance = 4;
 
     // the block height (block index)
