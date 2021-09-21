@@ -13,6 +13,18 @@ service Account {
   rpc GetVotingPower(VotingPowerRequest) returns (VotingPowerReply);
   // GetBlockByID uses the hash of a block to get the data
   rpc GetBlockByID(BlockByIDRequest) returns (BlockByIDReply);
+  // GetDelegate uses an account address to return a address of the delegate
+  rpc GetDelegate(DelegateRequest) returns (DelegateReply);
+  // GetPendingBlocks gets all blocks that havent been processed
+  rpc GetPendingBlocks(PendingBlockRequest) returns (PendingBlockReply);
+  // GetUnacknowledgedTX gets a number of how many transactions are unacknowledged
+  rpc GetUnacknowledgedTX(UnacknowledgedTXRequest) returns (UnacknowledgedTXReply);
+  // GetBlockByHeight uses the height in the chain to get a block
+  rpc GetBlockByHeight(BlockByHeightRequest) returns (BlockByHeightReply);
+  // GetTXByID uses a transaction ID to get a transaction
+  rpc GetTXByID(TXByIDRequest) returns (TXByIDReply);
+  // GetTXByIndex uses an index for inside a block to return a transaction
+  rpc GetTXByIndex(TXByIndexRequest) returns (TXByIndexReply);
 }
 
 message BalanceRequest {
@@ -39,3 +51,27 @@ message VotingPowerReply { uint32 power = 1; }
 message BlockByIDRequest { bytes hash = 1; }
 
 message BlockByIDReply { API.Block block = 1; }
+
+message DelegateRequest {}
+
+message DelegateReply {}
+
+message PendingBlockRequest {}
+
+message PendingBlockReply {}
+
+message UnacknowledgedTXRequest {}
+
+message UnacknowledgedTXReply {}
+
+message BlockByHeightRequest {}
+
+message BlockByHeightReply {}
+
+message TXByIDRequest {}
+
+message TXByIDReply {}
+
+message TXByIndexRequest {}
+
+message TXByIndexReply {}
