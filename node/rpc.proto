@@ -16,9 +16,9 @@ service Account {
   // GetDelegate uses an account address to return a address of the delegate
   rpc GetDelegate(DelegateRequest) returns (DelegateReply);
   // GetPendingBlocks gets all blocks that havent been processed
-  rpc GetPendingBlocks(PendingBlockRequest) returns (PendingBlockReply);
+  rpc GetPendingBlocks(Empty) returns (PendingBlockReply);
   // GetUnacknowledgedTX gets a number of how many transactions are unacknowledged
-  rpc GetUnacknowledgedTX(UnacknowledgedTXRequest) returns (UnacknowledgedTXReply);
+  rpc GetUnacknowledgedTX(Empty) returns (UnacknowledgedTXReply);
   // GetBlockByHeight uses the height in the chain to get a block
   rpc GetBlockByHeight(BlockByHeightRequest) returns (BlockByHeightReply);
   // GetTXByID uses a transaction ID to get a transaction
@@ -54,15 +54,11 @@ message BlockByIDReply { API.Block block = 1; }
 
 message DelegateRequest { string address = 1; }
 
+message PendingBlockReply { repeated API.Block blocks = 1; }
+
+message UnacknowledgedTXReply {repeated API.Transaction transactions = 1; }
+
 message DelegateReply { string delegateAddress = 1; }
-
-message PendingBlockRequest {}
-
-message PendingBlockReply {}
-
-message UnacknowledgedTXRequest {}
-
-message UnacknowledgedTXReply {}
 
 message BlockByHeightRequest { uint64 height = 1; }
 
@@ -73,8 +69,10 @@ message TXByIDRequest { bytes transactionID = 1; }
 message TXByIDReply { API.Transaction transaction = 1; }
 
 message TXByIndexRequest { 
-  string address = 1;
+  uint64 height = 1;
   uint64 index = 2; 
 }
 
 message TXByIndexReply { API.Transaction transaction = 1; }
+
+message Empty {}
