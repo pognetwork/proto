@@ -52,9 +52,9 @@ message BlockByIDRequest { bytes hash = 1; }
 
 message BlockByIDReply { API.Block block = 1; }
 
-message DelegateRequest {}
+message DelegateRequest { string address = 1; }
 
-message DelegateReply {}
+message DelegateReply { string delegateAddress = 1; }
 
 message PendingBlockRequest {}
 
@@ -64,14 +64,17 @@ message UnacknowledgedTXRequest {}
 
 message UnacknowledgedTXReply {}
 
-message BlockByHeightRequest {}
+message BlockByHeightRequest { uint64 height = 1; }
 
-message BlockByHeightReply {}
+message BlockByHeightReply { API.Block block = 1; }
 
-message TXByIDRequest {}
+message TXByIDRequest { bytes transactionID = 1; }
 
-message TXByIDReply {}
+message TXByIDReply { API.Transaction transaction = 1; }
 
-message TXByIndexRequest {}
+message TXByIndexRequest { 
+  string address = 1;
+  uint64 index = 2; 
+}
 
-message TXByIndexReply {}
+message TXByIndexReply { API.Transaction transaction = 1; }
