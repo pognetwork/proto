@@ -13,6 +13,9 @@ pub mod api {
     pub type TransactionID = [u8; 32];
 }
 
+#[derive(Debug, Clone)]
+struct DoubleError;
+
 #[path = "generated/rpc.rs"]
 pub mod rpc;
 
@@ -23,14 +26,20 @@ fn sha3(data: impl AsRef<[u8]>) -> [u8; 32] {
 }
 
 impl api::Block {
-    pub fn get_id(&self) -> api::BlockID {
-        sha3(&self.encode_to_vec())
+    pub fn get_id(&self) -> Result<api::BlockID, std::io::Error> {
+        Ok(sha3(
+            &self
+                .data
+                .clone()
+                .ok_or(std::io::ErrorKind::InvalidInput)?
+                .encode_to_vec(),
+        ))
     }
 }
 
 impl api::Transaction {
     pub fn get_id(&self, parent_block_id: api::BlockID) -> TransactionID {
-        let transaction_hash = sha3(&self.encode_to_vec());
+        let transaction_hash = sha3(self.encode_to_vec());
         sha3([parent_block_id, transaction_hash].concat())
     }
 }
