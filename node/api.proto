@@ -68,9 +68,6 @@ message Block {
     BlockVersion version = 1;
     SigType signatureType = 2;
 
-    // 24 bytes
-    string address = 3;
-
     // the new account balance after applying all transactions
     uint64 balance = 4;
 
