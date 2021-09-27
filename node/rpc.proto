@@ -42,7 +42,10 @@ message BlockHeightRequest {
 
 message BlockHeightReply { uint64 nextHeight = 1; }
 
-message VotingPowerRequest { bytes address = 1; }
+message VotingPowerRequest { 
+  bytes address = 1; 
+  optional bool getActive = 2;
+}
 
 message VotingPowerReply { uint32 power = 1; }
 
