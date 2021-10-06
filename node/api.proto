@@ -8,7 +8,7 @@ enum AccountType {
 
 message PrivateAccount {
   AccountType type = 1;
-  string address = 2;
+  bytes address = 2;
   bytes publicKey = 3;
   bytes privateKey = 4;
   uint32 votingPower = 5;
@@ -16,7 +16,7 @@ message PrivateAccount {
 
 message PublicAccount {
   AccountType type = 1;
-  string address = 2;
+  bytes address = 2;
   uint32 votingPower = 3;
 }
 
