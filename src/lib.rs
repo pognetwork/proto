@@ -19,8 +19,28 @@ pub mod api {
 #[derive(Debug, Clone)]
 struct DoubleError;
 
-#[path = "generated/rpc.rs"]
-pub mod rpc;
+#[path = "generated/account.rs"]
+mod rpc_account;
+
+#[path = "generated/private.rs"]
+mod rpc_private;
+
+#[path = "generated/admin.rs"]
+mod rpc_admin;
+
+pub mod rpc {
+    mod account {
+        pub use crate::rpc_account::*;
+    }
+
+    mod admin {
+        pub use crate::rpc_admin::*;
+    }
+
+    mod private {
+        pub use crate::rpc_private::*;
+    }
+}
 
 fn sha3(data: impl AsRef<[u8]>) -> [u8; 32] {
     let mut hasher = Sha3_256::new();
