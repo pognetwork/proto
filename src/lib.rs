@@ -29,15 +29,15 @@ mod rpc_private;
 mod rpc_admin;
 
 pub mod rpc {
-    mod account {
+    pub mod account {
         pub use crate::rpc_account::*;
     }
 
-    mod admin {
+    pub mod admin {
         pub use crate::rpc_admin::*;
     }
 
-    mod private {
+    pub mod private {
         pub use crate::rpc_private::*;
     }
 }
