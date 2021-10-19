@@ -1,2 +1,55 @@
 syntax = "proto3";
 package ADMIN;
+
+import "node/api.proto";
+
+service Admin {
+  rpc GetPeers(GetPeersRequest) returns (GetPeersResponse);
+  rpc GetVersion(Empty) returns (GetVersionResponse);
+  rpc UpgradeNode(UpgradeNodeRequest) returns (UpgradeNodeResponse);
+  rpc GetPendingBlocks(GetPendingBlocksRequest) returns (GetPendingBlocksReply);
+  rpc GetPendingBlockLimit(GetPendingBlockLimitRequest) returns (GetPendingBlockLimitReply);
+  rpc GetNodeStatus(GetNodeStatusRequest) returns (GetNodeStatusReply);
+  rpc GetMode(GetModeRequest) returns(GetModeReply);
+  rpc SetMode(SetModeRequest) returns (SetModeReply);
+  rpc GetNodeName(GetNodeNameRequest) returns (GetNodeNameReply);
+  rpc SetNodeName(SetNodeNameRequest) returns (SetNodeNameReply);
+  rpc GetChain(GetChainRequest) returns (GetChainReply);
+  rpc GetLogs(GetLogsRequest) returns (GetLogsReply);
+}
+
+message GetPeersRequest {}
+message GetPeersResponse {}
+
+message GetVersionRequest {}
+message GetVersionResponse {}
+
+message UpgradeNodeRequest {}
+message UpgradeNodeResponse {}
+
+message GetPendingBlocksRequest {}
+message GetPendingBlocksReply {}
+
+message GetPendingBlockLimitRequest {}
+message GetPendingBlockLimitReply {}
+
+message GetNodeStatusRequest {}
+message GetNodeStatusReply {}
+
+message GetModeRequest {}
+message GetModeReply {}
+
+message SetModeRequest {}
+message SetModeReply {}
+
+message GetNodeNameRequest {}
+message GetNodeNameReply {}
+
+message SetNodeNameRequest {}
+message SetNodeNameReply {}
+
+message GetChainRequest {}
+message GetChainReply {}
+
+message GetLogsRequest {}
+message GetLogsReply {}
