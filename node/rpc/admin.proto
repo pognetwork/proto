@@ -28,7 +28,7 @@ message UpgradeNodeRequest {}
 message UpgradeNodeResponse {}
 
 message GetPendingBlocksRequest {}
-message GetPendingBlocksReply { optional repeated API.Block blocks = 1; }
+message GetPendingBlocksReply { repeated optional API.Block blocks = 1; }
 
 message GetPendingBlockLimitRequest {}
 message GetPendingBlockLimitReply {}
