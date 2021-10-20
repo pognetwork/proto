@@ -75,6 +75,9 @@ message Block {
     // previous block, empty if first block
     optional bytes previous = 6;
 
+    // transactions contained in a block
+    // - Can't contain duplicates
+    // - Can't contain more than 255 transactions
     repeated Transaction transactions = 7;
   }
 }
