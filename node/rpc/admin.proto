@@ -5,14 +5,14 @@ import "node/api.proto";
 
 service Admin {
   rpc GetPeers(GetPeersRequest) returns (GetPeersResponse);
-  rpc GetVersion(GetVersionRequest) returns (GetVersionResponse);
+  rpc GetVersion(Empty) returns (GetVersionResponse);
   rpc UpgradeNode(UpgradeNodeRequest) returns (UpgradeNodeResponse);
   rpc GetPendingBlocks(GetPendingBlocksRequest) returns (GetPendingBlocksReply);
-  rpc GetPendingBlockLimit(GetPendingBlockLimitRequest) returns (GetPendingBlockLimitReply);
+  rpc GetBlockPoolSize(Empty) returns (GetBlockPoolSizeReply);
   rpc GetNodeStatus(GetNodeStatusRequest) returns (GetNodeStatusReply);
   rpc GetMode(GetModeRequest) returns(GetModeReply);
   rpc SetMode(SetModeRequest) returns (SetModeReply);
-  rpc GetNodeName(GetNodeNameRequest) returns (GetNodeNameReply);
+  rpc GetNodeName(Empty) returns (GetNodeNameReply);
   rpc SetNodeName(SetNodeNameRequest) returns (SetNodeNameReply);
   rpc GetChain(GetChainRequest) returns (GetChainReply);
   rpc GetLogs(GetLogsRequest) returns (GetLogsReply);
@@ -21,7 +21,6 @@ service Admin {
 message GetPeersRequest {}
 message GetPeersResponse {}
 
-message GetVersionRequest {}
 message GetVersionResponse { string version = 1; }
 
 message UpgradeNodeRequest {}
@@ -30,8 +29,7 @@ message UpgradeNodeResponse {}
 message GetPendingBlocksRequest {}
 message GetPendingBlocksReply { repeated API.Block blocks = 1; }
 
-message GetPendingBlockLimitRequest {}
-message GetPendingBlockLimitReply {}
+message GetBlockPoolSizeReply { uint64 queueLenght = 1; }
 
 message GetNodeStatusRequest {}
 message GetNodeStatusReply {}
@@ -42,7 +40,6 @@ message GetModeReply {}
 message SetModeRequest {}
 message SetModeReply {}
 
-message GetNodeNameRequest {}
 message GetNodeNameReply { string name = 1; }
 
 message SetNodeNameRequest {}
@@ -53,3 +50,5 @@ message GetChainReply {}
 
 message GetLogsRequest {}
 message GetLogsReply {}
+
+message Empty {}
