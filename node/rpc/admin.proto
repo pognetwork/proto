@@ -22,13 +22,13 @@ message GetPeersRequest {}
 message GetPeersResponse {}
 
 message GetVersionRequest {}
-message GetVersionResponse {}
+message GetVersionResponse { string version = 1; }
 
 message UpgradeNodeRequest {}
 message UpgradeNodeResponse {}
 
 message GetPendingBlocksRequest {}
-message GetPendingBlocksReply {}
+message GetPendingBlocksReply { optional repeated API.Block blocks = 1; }
 
 message GetPendingBlockLimitRequest {}
 message GetPendingBlockLimitReply {}
@@ -43,7 +43,7 @@ message SetModeRequest {}
 message SetModeReply {}
 
 message GetNodeNameRequest {}
-message GetNodeNameReply {}
+message GetNodeNameReply { string name = 1; }
 
 message SetNodeNameRequest {}
 message SetNodeNameReply {}
