@@ -12,8 +12,8 @@ service Admin {
   rpc GetNodeStatus(GetNodeStatusRequest) returns (GetNodeStatusReply);
   rpc GetMode(GetModeRequest) returns(GetModeReply);
   rpc SetMode(SetModeRequest) returns (SetModeReply);
-  rpc GetNodeName(Empty) returns ();
-  rpc SetNodeName(SetNodeNameRequest) returns (SetNodeNameReply);
+  rpc GetNodeName(Empty) returns (GetNodeNameReply);
+  rpc SetNodeName(SetNodeNameRequest) returns (Empty);
   rpc GetChain(GetChainRequest) returns (GetChainReply);
   rpc GetLogs(GetLogsRequest) returns (GetLogsReply);
 }
