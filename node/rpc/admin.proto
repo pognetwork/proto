@@ -12,7 +12,7 @@ service Admin {
   rpc GetNodeStatus(GetNodeStatusRequest) returns (GetNodeStatusReply);
   rpc GetMode(GetModeRequest) returns(GetModeReply);
   rpc SetMode(SetModeRequest) returns (SetModeReply);
-  rpc GetNodeName(Empty) returns (GetNodeNameReply);
+  rpc GetNodeName(Empty) returns ();
   rpc SetNodeName(SetNodeNameRequest) returns (SetNodeNameReply);
   rpc GetChain(GetChainRequest) returns (GetChainReply);
   rpc GetLogs(GetLogsRequest) returns (GetLogsReply);
@@ -42,8 +42,7 @@ message SetModeReply {}
 
 message GetNodeNameReply { string name = 1; }
 
-message SetNodeNameRequest {}
-message SetNodeNameReply {}
+message SetNodeNameRequest { string new_name = 1; }
 
 message GetChainRequest {}
 message GetChainReply {}
