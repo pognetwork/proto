@@ -5,7 +5,7 @@ import "node/api.proto";
 
 service Admin {
   rpc GetPeers(GetPeersRequest) returns (GetPeersResponse);
-  rpc GetVersion(Empty) returns (GetVersionResponse);
+  rpc GetVersion(GetVersionRequest) returns (GetVersionResponse);
   rpc UpgradeNode(UpgradeNodeRequest) returns (UpgradeNodeResponse);
   rpc GetPendingBlocks(GetPendingBlocksRequest) returns (GetPendingBlocksReply);
   rpc GetPendingBlockLimit(GetPendingBlockLimitRequest) returns (GetPendingBlockLimitReply);
