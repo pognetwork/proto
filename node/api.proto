@@ -7,18 +7,12 @@ enum AccountType {
   Autonomous = 1;
 }
 
-message PrivateAccount {
+message Account {
   AccountType type = 1;
   bytes address = 2;
   bytes publicKey = 3;
   bytes privateKey = 4;
   uint32 votingPower = 5;
-}
-
-message PublicAccount {
-  AccountType type = 1;
-  bytes address = 2;
-  uint32 votingPower = 3;
 }
 
 // should be represented as u8
