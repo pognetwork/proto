@@ -1,9 +1,7 @@
 name: Publish Node.js Package
 
 on:
-  workflow_dispatch:
-    tags:
-      description: "Publish NPM Package"
+  workflow_dispatch: {}
   push:
     paths:
       - "node/**"
