@@ -21,4 +21,6 @@ Cargo pins dependencies, so after pushing a new change to this repo, be sure to 
 
 ### Typescript
 
-Typescript support will follow soon.
+New builds are automatically released and versioned with the sortened version of the commit hash, e.g. `0.1.0-d15c488`.
+
+`$ npm install @pognetwork/champ-proto@latest`
