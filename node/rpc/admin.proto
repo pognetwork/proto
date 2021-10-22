@@ -10,7 +10,7 @@ service Admin {
   rpc GetPendingBlocks(GetPendingBlocksRequest) returns (GetPendingBlocksReply);
   rpc GetBlockPoolSize(Empty) returns (GetBlockPoolSizeReply);
   rpc GetNodeStatus(GetNodeStatusRequest) returns (GetNodeStatusReply);
-  rpc GetMode(GetModeRequest) returns(GetModeReply);
+  rpc GetMode(GetModeRequest) returns (GetModeReply);
   rpc SetMode(SetModeRequest) returns (SetModeReply);
   rpc GetNodeName(Empty) returns (GetNodeNameReply);
   rpc SetNodeName(SetNodeNameRequest) returns (Empty);
