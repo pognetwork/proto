@@ -1,4 +1,4 @@
-# Shared Protocol Buffers
+# Shared Protocol Buffers ![](https://img.shields.io/npm/v/@pognetwork/champ-proto?style=flat-square&logo=npm)
 
 This repository contains protocol buffers which are shared across pog projects and can be used to interact with the different APIs safely.
 
@@ -19,7 +19,7 @@ pog-proto = {git = "https://github.com/pognetwork/proto"}
 
 Cargo pins dependencies, so after pushing a new change to this repo, be sure to run `$ cargo update` in the project depending on this. Also, remember to reload your IDE since the rust language server often doesn't pick up the changes in dependencies.
 
-### Typescript
+### TypeScript/JavaScript
 
 New builds are automatically released and versioned with the sortened version of the commit hash, e.g. `0.1.0-d15c488`.
 
