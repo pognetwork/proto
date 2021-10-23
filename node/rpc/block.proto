@@ -1,9 +1,9 @@
 syntax = "proto3";
-package WALLET;
+package BLOCK;
 
 import "node/api.proto";
 
-service Wallet {
+service Block {
   // GetBalance accepts BalanceRequests and returns BalanceReplies
   rpc GetBalance(BalanceRequest) returns (BalanceReply);
   // GetNextBlockHeight uses an address to get the latest block index to then
