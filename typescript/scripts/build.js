@@ -2,9 +2,9 @@ import shell from "shelljs";
 
 const files = [
   "api.proto",
-  "rpc/admin.proto",
-  "rpc/private.proto",
-  "rpc/account.proto",
+  "rpc/node_admin.proto",
+  "rpc/node_wallet_manager.proto",
+  "rpc/block.proto",
 ];
 
 if (!shell.which('protoc')) {

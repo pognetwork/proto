@@ -1,9 +1,9 @@
 syntax = "proto3";
-package ADMIN;
+package NODEADMIN;
 
 import "node/api.proto";
 
-service Admin {
+service NodeAdmin {
   rpc GetPeers(GetPeersRequest) returns (GetPeersResponse);
   rpc GetVersion(Empty) returns (GetVersionResponse);
   rpc UpgradeNode(UpgradeNodeRequest) returns (UpgradeNodeResponse);
