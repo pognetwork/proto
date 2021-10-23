@@ -18,13 +18,13 @@ service NodeWalletManager {
 message GetWalletsReply {};
 
 message GetWalletRequest { bytes address = 1; };
-message GetWalletReply { API.Wallet wallet = 1; };
+message GetWalletReply { API.Account account = 1; };
 
 message AddWalletRequest {
   string username = 1;
   string password = 2;
 };
-message AddWalletReply { API.Wallet wallet = 1; };
+message AddWalletReply { API.Account account = 1; };
 
 message RemoveWalletRequest { bytes address = 1; };
 
