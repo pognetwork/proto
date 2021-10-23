@@ -2,13 +2,13 @@ syntax = "proto3";
 package API;
 
 // should be represented as u8
-enum WalletType {
+enum AccountType {
   Managed = 0;
   Autonomous = 1;
 }
 
-message Wallet {
-  WalletType type = 1;
+message Account {
+  AccountType type = 1;
   bytes address = 2;
   bytes publicKey = 3;
   bytes privateKey = 4;
