@@ -19,26 +19,26 @@ pub mod api {
 #[derive(Debug, Clone)]
 struct DoubleError;
 
-#[path = "generated/account.rs"]
-mod rpc_account;
+#[path = "generated/block.rs"]
+mod rpc_block;
 
-#[path = "generated/private.rs"]
-mod rpc_private;
+#[path = "generated/node_wallet_manager.rs"]
+mod rpc_node_wallet_manager;
 
-#[path = "generated/admin.rs"]
-mod rpc_admin;
+#[path = "generated/node_admin.rs"]
+mod rpc_node_admin;
 
 pub mod rpc {
-    pub mod account {
-        pub use crate::rpc_account::*;
+    pub mod block {
+        pub use crate::rpc_block::*;
     }
 
-    pub mod admin {
-        pub use crate::rpc_admin::*;
+    pub mod node_admin {
+        pub use crate::rpc_node_admin::*;
     }
 
-    pub mod private {
-        pub use crate::rpc_private::*;
+    pub mod node_wallet_manager {
+        pub use crate::rpc_node_wallet_manager::*;
     }
 }
 
