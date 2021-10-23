@@ -1,13 +1,13 @@
 syntax = "proto3";
-package PRIVATE;
+package NODEWALLETMANAGER;
 
 import "node/api.proto";
 
-service Private {
-  rpc GetAccounts(Empty) returns (GetAccountsReply);
-  rpc GetAccount(GetAccountRequest) returns (GetAccountReply);
-  rpc AddAccount(AddAccountRequest) returns (AddAccountReply);
-  rpc RemoveAccount(RemoveAccountRequest) returns (Empty);
+service NodeWalletManager {
+  rpc GetWallets(Empty) returns (GetWalletsReply);
+  rpc GetWallet(GetWalletRequest) returns (GetWalletReply);
+  rpc AddWallet(AddWalletRequest) returns (AddWalletReply);
+  rpc RemoveWallet(RemoveWalletRequest) returns (Empty);
   rpc SignMessage(SignMessageRequest) returns (SignMessageReply);
   rpc SignBlock(SignBlockRequest) returns (SignBlockReply);
   rpc VerifySignature(VerifySignatureRequest) returns (Empty);
@@ -15,18 +15,18 @@ service Private {
   rpc DecryptMessage(DecryptMessageRequest) returns (DecryptMessageReply);
 }
 
-message GetAccountsReply {};
+message GetWalletsReply {};
 
-message GetAccountRequest { bytes address = 1; };
-message GetAccountReply { API.Account account = 1; };
+message GetWalletRequest { bytes address = 1; };
+message GetWalletReply { API.Wallet wallet = 1; };
 
-message AddAccountRequest {
+message AddWalletRequest {
   string username = 1;
   string password = 2;
 };
-message AddAccountReply { API.Account account = 1; };
+message AddWalletReply { API.Wallet wallet = 1; };
 
-message RemoveAccountRequest { bytes address = 1; };
+message RemoveWalletRequest { bytes address = 1; };
 
 message SignMessageRequest { 
   string unsigned_data = 1; 
