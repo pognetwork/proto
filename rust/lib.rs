@@ -22,10 +22,10 @@ struct DoubleError;
 #[path = "generated/block.rs"]
 mod rpc_block;
 
-#[path = "generated/node_wallet_manager.rs"]
+#[path = "generated/nodewalletmanager.rs"]
 mod rpc_node_wallet_manager;
 
-#[path = "generated/node_admin.rs"]
+#[path = "generated/nodeadmin.rs"]
 mod rpc_node_admin;
 
 pub mod rpc {
