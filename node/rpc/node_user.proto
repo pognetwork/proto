@@ -1,9 +1,7 @@
 syntax = "proto3";
 package NODEUSER;
 
-import "node/api.proto";
-
-service User {
+service NodeUser {
     rpc Login(LoginRequest) returns (LoginReply);
 }
 
