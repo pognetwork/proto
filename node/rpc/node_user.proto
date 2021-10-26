@@ -1,0 +1,17 @@
+syntax = "proto3";
+package NODEUSER;
+
+import "node/api.proto";
+
+service User {
+    rpc Login(LoginRequest) returns (LoginReply);
+}
+
+message LoginRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message LoginReply {
+    string token = 1;
+}

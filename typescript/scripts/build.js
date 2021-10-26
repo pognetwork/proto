@@ -5,6 +5,7 @@ const files = [
   "rpc/node_admin.proto",
   "rpc/node_wallet_manager.proto",
   "rpc/block.proto",
+  "rpc/node_user.proto",
 ];
 
 if (!shell.which('protoc')) {

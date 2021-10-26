@@ -28,6 +28,9 @@ mod rpc_node_wallet_manager;
 #[path = "generated/nodeadmin.rs"]
 mod rpc_node_admin;
 
+#[path = "generated/nodeuser.rs"]
+mod rpc_node_user;
+
 pub mod rpc {
     pub mod block {
         pub use crate::rpc_block::*;
@@ -39,6 +42,10 @@ pub mod rpc {
 
     pub mod node_wallet_manager {
         pub use crate::rpc_node_wallet_manager::*;
+    }
+
+    pub mod node_user {
+        pub use crate::rpc_node_user::*;
     }
 }
 
