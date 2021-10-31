@@ -33,7 +33,11 @@ message Transaction {
   };
 
   // Block Claim collects a transaction from another account's block
-  message TxClaim { bytes transactionID = 1; };
+  message TxClaim { 
+    bytes transactionID = 1; 
+    bytes signature = 2;
+    bytes data = 3;
+  };
 
   // Block delegate assigns a new representative to an account
   message TxDelegate { bytes representative = 1; };
