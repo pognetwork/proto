@@ -4,50 +4,66 @@ package NODEADMIN;
 import "node/api.proto";
 
 service NodeAdmin {
-  rpc GetPeers(GetPeersRequest) returns (GetPeersResponse);
+  rpc GetPeers(Empty) returns (GetPeersResponse);
   rpc GetVersion(Empty) returns (GetVersionResponse);
-  rpc UpgradeNode(UpgradeNodeRequest) returns (UpgradeNodeResponse);
-  rpc GetPendingBlocks(GetPendingBlocksRequest) returns (GetPendingBlocksReply);
+  rpc UpgradeNode(UpgradeNodeRequest) returns (Empty);
+  rpc GetPendingBlocks(Empty) returns (GetPendingBlocksReply);
   rpc GetBlockPoolSize(Empty) returns (GetBlockPoolSizeReply);
-  rpc GetNodeStatus(GetNodeStatusRequest) returns (GetNodeStatusReply);
-  rpc GetMode(GetModeRequest) returns (GetModeReply);
-  rpc SetMode(SetModeRequest) returns (SetModeReply);
+  rpc GetNodeStatus(Empty) returns (GetNodeStatusReply);
+  rpc GetMode(Empty) returns (GetModeReply);
+  rpc SetMode(SetModeRequest) returns (Empty);
   rpc GetNodeName(Empty) returns (GetNodeNameReply);
   rpc SetNodeName(SetNodeNameRequest) returns (Empty);
-  rpc GetChain(GetChainRequest) returns (GetChainReply);
+  rpc GetChain(Empty) returns (GetChainReply);
   rpc GetLogs(GetLogsRequest) returns (GetLogsReply);
 }
 
-message GetPeersRequest {}
-message GetPeersResponse {}
+enum Mode {
+  // prime delegates
+  PRIME = 0;
+
+  // non-prime delegates
+  VALIDATING = 1;
+
+  // non-interacting node
+  OBSERVER = 2;
+
+  // node without the full transaction history
+  LIGHT = 3;
+}
+
+enum Status {
+  RUNNING = 0;
+  OUT_OF_SYNC = 1;
+  WAITING_FOR_PEERS = 2;
+  STARTING = 3;
+}
+
+message Peer {
+  string ip = 1;
+  bool prime = 2;
+}
+
+message GetPeersResponse { repeated Peer peers = 1; }
 
 message GetVersionResponse { string version = 1; }
+message UpgradeNodeRequest { string version = 1; }
 
-message UpgradeNodeRequest {}
-message UpgradeNodeResponse {}
-
-message GetPendingBlocksRequest {}
 message GetPendingBlocksReply { repeated API.Block blocks = 1; }
 
 message GetBlockPoolSizeReply { uint64 length = 1; }
 
-message GetNodeStatusRequest {}
-message GetNodeStatusReply {}
+message GetNodeStatusReply { Status status = 1; }
 
-message GetModeRequest {}
-message GetModeReply {}
-
-message SetModeRequest {}
-message SetModeReply {}
+message SetModeRequest { Mode mode = 1; }
+message GetModeReply { Mode current_mode = 1; }
 
 message GetNodeNameReply { string name = 1; }
-
 message SetNodeNameRequest { string new_name = 1; }
 
-message GetChainRequest {}
-message GetChainReply {}
+message GetChainReply { string current_chain = 1; }
 
-message GetLogsRequest {}
-message GetLogsReply {}
+message GetLogsRequest { uint64 since = 1; }
+message GetLogsReply { repeated string logs = 1; }
 
 message Empty {}
