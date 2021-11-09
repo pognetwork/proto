@@ -23,4 +23,24 @@ Cargo pins dependencies, so after pushing a new change to this repo, be sure to 
 
 New builds are automatically released and versioned with the sortened version of the commit hash, e.g. `0.1.0-d15c488`.
 
-`$ npm install @pognetwork/champ-proto@latest`
+`$ npm install @pognetwork/champ-proto@latest google-protobuf @types/google-protobuf @improbable-eng/grpc-web`
+
+```ts
+import { grpc } from "@improbable-eng/grpc-web";
+import {
+  GrpcWebImpl,
+  NodeUserClientImpl,
+} from "@pognetwork/champ-proto/rpc/node_user";
+
+const rpc = new GrpcWebImpl("http://localhost:9090", {
+  debug: false,
+  metadata: new grpc.Metadata({ Authorization: "bar" }),
+});
+
+const user = new NodeUserClientImpl(rpc);
+
+user
+  .Login({ password: "foo", username: "bar" })
+  .then((reply) => console.log(reply.token))
+  .catch((e) => console.error(e));
+```
