@@ -10,9 +10,12 @@
   "files": [
     "api.js",
     "api.d.ts",
+    "index.js",
+    "index.d.ts",
     "rpc/"
   ],
   "exports": {
+    "./": "./index.js",
     "./node": "./node.js",
     "./rpc/": "./rpc/"
   },
