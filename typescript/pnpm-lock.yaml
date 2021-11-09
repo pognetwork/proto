@@ -4,6 +4,7 @@ specifiers:
   '@improbable-eng/grpc-web': ^0.14.1
   '@types/node': ^16.11.4
   '@types/shelljs': ^0.8.9
+  browser-headers: ^0.4.1
   long: ^4.0.0
   protobufjs: ^6.11.2
   shelljs: ^0.8.4
@@ -12,6 +13,7 @@ specifiers:
 
 dependencies:
   '@improbable-eng/grpc-web': 0.14.1
+  browser-headers: 0.4.1
   long: 4.0.0
   protobufjs: 6.11.2
 

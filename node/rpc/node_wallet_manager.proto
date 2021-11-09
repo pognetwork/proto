@@ -28,31 +28,31 @@ message AddWalletReply { API.Account account = 1; };
 
 message RemoveWalletRequest { bytes address = 1; };
 
-message SignMessageRequest { 
-  string unsigned_data = 1; 
+message SignMessageRequest {
+  string unsigned_data = 1;
   bytes address = 2;
 };
 message SignMessageReply { string signed_data = 1; };
 
-message SignBlockRequest { 
-  API.Block unsigned_block = 1; 
+message SignBlockRequest {
+  API.SignedBlock unsigned_block = 1;
   bytes address = 2;
 };
-message SignBlockReply { API.Block signed_block = 1; };
+message SignBlockReply { API.SignedBlock signed_block = 1; };
 
-message VerifySignatureRequest { 
-  string data = 1; 
+message VerifySignatureRequest {
+  string data = 1;
   bytes address = 2;
 };
 
-message EncryptMessageRequest { 
-  string unencrypted_message = 1; 
+message EncryptMessageRequest {
+  string unencrypted_message = 1;
   bytes address = 2;
 };
 message EncryptMessageReply { string encrypted_message = 1; };
 
-message DecryptMessageRequest { 
-  string encrypted_message = 1; 
+message DecryptMessageRequest {
+  string encrypted_message = 1;
   bytes address = 2;
 };
 message DecryptMessageReply { string decrypted_message = 1; };

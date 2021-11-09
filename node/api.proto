@@ -46,7 +46,7 @@ message Transaction {
   };
 }
 
-message Block {
+message SignedBlock {
   // 64 bytes (for Ed25519, might be expanded later)
   bytes signature = 4;
 

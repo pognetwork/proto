@@ -49,7 +49,7 @@ message GetPeersResponse { repeated Peer peers = 1; }
 message GetVersionResponse { string version = 1; }
 message UpgradeNodeRequest { string version = 1; }
 
-message GetPendingBlocksReply { repeated API.Block blocks = 1; }
+message GetPendingBlocksReply { repeated API.SignedBlock blocks = 1; }
 
 message GetBlockPoolSizeReply { uint64 length = 1; }
 

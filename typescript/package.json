@@ -1,6 +1,6 @@
 {
   "name": "@pognetwork/champ-proto",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This repository contains protocol buffers which are shared across pog projects and can be used to interact with the different APIs safely.",
   "homepage": "https://github.com/pognetwork/api#readme",
   "repository": {
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@improbable-eng/grpc-web": "^0.14.1",
+    "browser-headers": "^0.4.1",
     "long": "^4.0.0",
     "protobufjs": "^6.11.2"
   }
