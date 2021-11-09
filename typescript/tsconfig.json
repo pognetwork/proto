@@ -6,6 +6,6 @@
     "moduleResolution": "Node",
     "downlevelIteration": true
   },
-  "include": ["./generated/node/**/*.ts", "./index.ts"],
+  "include": ["./generated/node/**/*.ts"],
   "exclude": ["./node_modules"]
 }

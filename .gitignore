@@ -17,5 +17,3 @@ node_modules
 
 typescript/rpc
 typescript/api.*
-typescript/index.d.ts
-typescript/index.js
