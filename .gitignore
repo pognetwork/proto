@@ -15,5 +15,4 @@ node_modules
 */generated/*
 !*/generated/.gitkeep
 
-typescript/rpc
-typescript/api.*
+typescript/node

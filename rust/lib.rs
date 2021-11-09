@@ -1,10 +1,7 @@
 use api::TransactionID;
-use prost::Message;
+use bytes::{BufMut, Bytes, BytesMut};
 use sha3::Digest;
 use sha3::Sha3_256;
-use tonic::codegen::Body;
-
-use bytes::{Buf, BufMut, Bytes, BytesMut};
 
 #[path = "generated/api.rs"]
 mod _api;
@@ -55,7 +52,7 @@ fn sha3(data: impl AsRef<[u8]>) -> [u8; 32] {
     hasher.finalize().into()
 }
 
-impl api::Block {
+impl api::SignedBlock {
     pub fn serialize_for_id(&self) -> Result<Vec<u8>, std::io::Error> {
         let data = &self.data.clone().ok_or(std::io::ErrorKind::InvalidInput)?;
         let mut res = BytesMut::new();
@@ -68,6 +65,7 @@ impl api::Block {
         }
 
         // block version v0 orders the block by protobuf index
+        res.put_slice(&self.public_key);
         res.put_u8(data.version as u8);
         res.put_u8(data.signature_type as u8);
         res.put_u64(data.balance);

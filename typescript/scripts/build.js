@@ -16,5 +16,5 @@ if (!shell.which('protoc')) {
 shell.cd("../")
 
 for (const file of files) {
-  shell.exec(`protoc --plugin=./typescript/node_modules/.bin/protoc-gen-ts_proto --ts_proto_opt=outputClientImpl=grpc-web  --ts_proto_out=./typescript/generated ./node/${file}`)
+  shell.exec(`protoc --plugin=./typescript/node_modules/.bin/protoc-gen-ts_proto --ts_proto_opt=outputClientImpl=grpc-web --ts_proto_opt=esModuleInterop=true  --ts_proto_out=./typescript/generated/node ./node/${file}`)
 }

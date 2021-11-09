@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "module": "ESNext",
-    "outDir": "./",
+    "outDir": "./node",
     "declaration": true,
     "moduleResolution": "Node",
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["./generated/node/**/*.ts"],
+  "include": ["./generated/**/*.ts"],
   "exclude": ["./node_modules"]
 }
