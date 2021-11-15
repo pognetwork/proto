@@ -52,8 +52,27 @@ fn sha3(data: impl AsRef<[u8]>) -> [u8; 32] {
     hasher.finalize().into()
 }
 
+impl api::signed_block::BlockData {
+    pub fn unique_bytes(&self) -> Result<Vec<u8>, std::io::Error> {
+        let mut res = BytesMut::new();
+
+        res.put_u8(self.version as u8);
+        res.put_u8(self.signature_type as u8);
+        res.put_u64(self.balance);
+        res.put_u64(self.height);
+        res.put_slice(self.previous());
+
+        self.transactions
+            .iter()
+            .filter_map(|tx| tx.unique_bytes().ok())
+            .for_each(|tx| res.put(tx));
+
+        Ok(res.to_vec())
+    }
+}
+
 impl api::SignedBlock {
-    pub fn serialize_for_id(&self) -> Result<Vec<u8>, std::io::Error> {
+    pub fn unique_bytes(&self) -> Result<Vec<u8>, std::io::Error> {
         let data = &self.data.clone().ok_or(std::io::ErrorKind::InvalidInput)?;
         let mut res = BytesMut::new();
 
@@ -64,29 +83,21 @@ impl api::SignedBlock {
             ));
         }
 
+        res.put_slice(&data.unique_bytes()?);
+
         // block version v0 orders the block by protobuf index
         res.put_slice(&self.public_key);
-        res.put_u8(data.version as u8);
-        res.put_u8(data.signature_type as u8);
-        res.put_u64(data.balance);
-        res.put_u64(data.height);
-        res.put_slice(data.previous());
-
-        data.transactions
-            .iter()
-            .filter_map(|tx| tx.serialize_for_id().ok())
-            .for_each(|tx| res.put(tx));
 
         Ok(res.to_vec())
     }
 
     pub fn get_id(&self) -> Result<api::BlockID, std::io::Error> {
-        Ok(sha3(self.serialize_for_id()?))
+        Ok(sha3(self.unique_bytes()?))
     }
 }
 
 impl api::Transaction {
-    pub fn serialize_for_id(&self) -> Result<Bytes, std::io::Error> {
+    pub fn unique_bytes(&self) -> Result<Bytes, std::io::Error> {
         let data = self.data.clone().ok_or(std::io::ErrorKind::InvalidInput)?;
         let mut res = BytesMut::new();
 
@@ -105,7 +116,7 @@ impl api::Transaction {
     }
 
     pub fn get_id(&self, parent_block_id: api::BlockID) -> Result<TransactionID, std::io::Error> {
-        let transaction_hash = sha3(self.serialize_for_id()?);
+        let transaction_hash = sha3(self.unique_bytes()?);
         Ok(sha3([parent_block_id, transaction_hash].concat()))
     }
 }
