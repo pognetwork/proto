@@ -73,7 +73,7 @@ message SignedBlock {
     uint64 height = 5;
 
     // previous block, empty if first block
-    optional bytes previous = 6;
+    bytes previous = 6;
 
     // transactions contained in a block
     // - Can't contain duplicates

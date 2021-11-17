@@ -1,12 +1,5 @@
 import shell from "shelljs";
-
-const files = [
-  "api.proto",
-  "rpc/node_admin.proto",
-  "rpc/node_wallet_manager.proto",
-  "rpc/block.proto",
-  "rpc/node_user.proto",
-];
+import { files } from "../files.js";
 
 if (!shell.which('protoc')) {
   shell.echo('This script requires protoc');

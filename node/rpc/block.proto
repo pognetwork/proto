@@ -38,14 +38,14 @@ message BalanceReply {
 
 message BlockHeightRequest {
   bytes address = 1;
-  optional bool getNext = 2;
+  bool getNext = 2;
 }
 
 message BlockHeightReply { uint64 nextHeight = 1; }
 
 message VotingPowerRequest {
   bytes address = 1;
-  optional bool getActive = 2;
+  bool getActive = 2;
 }
 
 message VotingPowerReply { uint32 power = 1; }

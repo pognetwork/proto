@@ -1,0 +1,9 @@
+site_name: proto
+nav:
+  - Overview: "index.md"
+  - API:
+      - API: "generated/api.md"
+      - BlockService: "generated/block.md"
+      - NodeAdminService: "generated/node_admin.md"
+      - NodeUserService: "generated/node_user.md"
+      - NodeWalletManager: "generated/node_wallet_manager.md"
