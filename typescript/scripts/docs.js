@@ -11,7 +11,7 @@ for (const file of files) {
   const out = file.split(".")[0];
   shell.exec(`
     docker run --rm \
-      -v $(pwd)/docs/generated:/out \
+      -v $(pwd)/docs/proto:/out \
       -v $(pwd)/:/protos \
       pseudomuto/protoc-gen-doc --doc_opt=markdown,${out}.md node/${file}
   `)
