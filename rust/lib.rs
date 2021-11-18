@@ -60,7 +60,7 @@ impl api::signed_block::BlockData {
         res.put_u8(self.signature_type as u8);
         res.put_u64(self.balance);
         res.put_u64(self.height);
-        res.put_slice(self.previous());
+        res.put_slice(&self.previous);
 
         self.transactions
             .iter()
