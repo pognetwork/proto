@@ -7,12 +7,8 @@
     "type": "git",
     "url": "git+https://github.com/pognetwork/api.git"
   },
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "node/"
-  ],
-  "module": "./index.js",
+  "license": "MIT",
+  "type": "module",
   "exports": {
     ".": "./index.js",
     "./node/api": "./node/api.js",
@@ -21,12 +17,23 @@
     "./node/rpc/node_user": "./node/rpc/node_user.js",
     "./node/rpc/node_wallet_manager": "./node/rpc/node_wallet_manager.js"
   },
-  "type": "module",
-  "license": "MIT",
+  "main": "./index.js",
+  "module": "./index.js",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "node/"
+  ],
   "scripts": {
     "build": "node scripts/build.js && tsc",
-    "update-docs": "node scripts/docs.js && tsc",
-    "bump": "node scripts/bump.js"
+    "bump": "node scripts/bump.js",
+    "update-docs": "node scripts/docs.js && tsc"
+  },
+  "dependencies": {
+    "@improbable-eng/grpc-web": "^0.15.0",
+    "browser-headers": "^0.4.1",
+    "long": "^5.2.0",
+    "protobufjs": "^6.11.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.14",
@@ -34,11 +41,5 @@
     "shelljs": "^0.8.5",
     "ts-proto": "^1.104.0",
     "typescript": "^4.5.5"
-  },
-  "dependencies": {
-    "@improbable-eng/grpc-web": "^0.15.0",
-    "browser-headers": "^0.4.1",
-    "long": "^5.2.0",
-    "protobufjs": "^6.11.2"
   }
 }
