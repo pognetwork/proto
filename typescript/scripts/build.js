@@ -6,6 +6,8 @@ if (!shell.which('protoc')) {
   shell.exit(1);
 }
 
+shell.mkdir("-p", ["generated/node"])
+
 shell.cd("../")
 
 for (const file of files) {
