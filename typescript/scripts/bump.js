@@ -6,7 +6,6 @@ const hash = shell.exec("git show -s --format=%h").trim();
 
 const pkg = JSON.parse(readFileSync("./package.json"));
 let version = pkg.version.split(".").map(i => parseInt(i));
-version[version.length - 1] = `0-${hash}`;
-pkg.version = version.join(".");
+pkg.version = `${version[0]}.${version[1]}.0-${hash}`;
 
 writeFileSync("./package.json", JSON.stringify(pkg, null, 2), "utf-8");
