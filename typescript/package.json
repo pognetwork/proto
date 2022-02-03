@@ -12,6 +12,7 @@
     "index.d.ts",
     "node/"
   ],
+  "module": "./index.js",
   "exports": {
     ".": "./index.js",
     "./node/api": "./node/api.js",

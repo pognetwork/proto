@@ -3,9 +3,10 @@
     "module": "ESNext",
     "outDir": "./node",
     "declaration": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "target": "ESNext"
   },
   "include": ["./generated/**/*.ts"],
   "exclude": ["./node_modules"]
