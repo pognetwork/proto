@@ -102,7 +102,7 @@ impl api::Transaction {
         let mut res = BytesMut::new();
 
         match data {
-            api::transaction::Data::TxCollect(data) => res.put_slice(&data.transaction_id),
+            api::transaction::Data::TxClaim(data) => res.put_slice(&data.send_transaction_id),
             api::transaction::Data::TxDelegate(data) => res.put_slice(&data.representative),
             api::transaction::Data::TxOpen(data) => res.put_u8(data.r#type as u8),
             api::transaction::Data::TxSend(data) => {
