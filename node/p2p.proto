@@ -1,0 +1,28 @@
+syntax = "proto3";
+package API;
+
+import "node/api.proto";
+
+message PogRequest {
+  message Block {
+    API.SignedBlock block = 1;
+  }
+  message FinalVote {
+    uint32 finalVote = 1;
+  }
+  message Vote {
+    uint32 vote = 1;
+  }
+
+  //bytes signature = 1;
+
+  oneof Data {
+    Block block = 2;
+    FinalVote finalVote = 3;
+    Vote vote = 4;
+  }
+}
+
+message PogResponse {
+  //bytes signature = 1;  
+}
