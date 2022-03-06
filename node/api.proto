@@ -1,6 +1,8 @@
 syntax = "proto3";
 package API;
 
+message Empty {}
+
 // should be represented as u8
 enum AccountType {
   Managed = 0;
@@ -38,9 +40,20 @@ message Transaction {
   };
 }
 
-message SignedBlock {
+// Block is a struct with both header, data and raw data
+// It should be used for things like api responses when querying blocks
+message Block {
+  API.BlockHeader header = 1;
+  API.BlockData data = 2;
+  bytes block_id = 3;
+}
+
+// A minimal version of Block
+// Should be used in cases where blocks need to be verified like in p2p
+// communication or when re-building/verifieng the entire chain
+message RawBlock {
   BlockHeader header = 1;
-  BlockData data = 2;
+  bytes data = 2;
 }
 
 message BlockHeader {

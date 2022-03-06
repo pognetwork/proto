@@ -1,15 +1,81 @@
-use api::TransactionID;
-use sha3::Digest;
-use sha3::Sha3_256;
+use std::convert::TryFrom;
 
+use api::TransactionID;
+use prost::Message;
 #[path = "generated/api.rs"]
 mod _api;
+mod util;
 
 pub mod api {
     pub use crate::_api::*;
     pub type AccountID = [u8; 24];
     pub type BlockID = [u8; 32];
     pub type TransactionID = [u8; 32];
+
+    /// SignedBlock is the preferred way to deal with blocks. From/Into Conversions are provided for `RawBlock` for convenience.
+    pub struct SignedBlock {
+        pub header: BlockHeader,
+        pub data: BlockData,
+        pub data_raw: Vec<u8>,
+    }
+}
+
+fn data_err(err: &str) -> std::io::Error {
+    std::io::Error::new(std::io::ErrorKind::InvalidData, err)
+}
+
+impl From<api::SignedBlock> for api::RawBlock {
+    fn from(block: api::SignedBlock) -> Self {
+        api::RawBlock {
+            data: block.data_raw,
+            header: Some(block.header),
+        }
+    }
+}
+
+impl TryFrom<api::RawBlock> for api::SignedBlock {
+    type Error = std::io::Error;
+
+    fn try_from(raw_block: api::RawBlock) -> Result<Self, Self::Error> {
+        if raw_block.data.is_empty() {
+            return Err(data_err("block data cannot be empty"));
+        }
+
+        let data = api::BlockData::decode(&*raw_block.data)?;
+        let header = raw_block
+            .header
+            .ok_or_else(|| data_err("missing block header"))?;
+
+        Ok(Self {
+            data_raw: raw_block.data,
+            data,
+            header,
+        })
+    }
+}
+
+impl api::SignedBlock {
+    pub fn get_id(&self) -> api::BlockID {
+        util::sha3(&self.data_raw)
+    }
+}
+
+impl api::Transaction {
+    pub fn get_id(
+        parent_block_id: api::BlockID,
+        index: u32,
+    ) -> Result<TransactionID, std::io::Error> {
+        match parent_block_id.is_empty() {
+            true => Err(std::io::Error::new(
+                std::io::ErrorKind::InvalidData,
+                "parent_block_id cannot be empty",
+            )),
+            false => Ok(util::sha3(util::concat_u8(
+                &parent_block_id,
+                &index.to_be_bytes(),
+            ))),
+        }
+    }
 }
 
 #[derive(Debug, Clone)]
@@ -45,30 +111,5 @@ pub mod rpc {
 
     pub mod node_user {
         pub use crate::rpc_node_user::*;
-    }
-}
-
-fn sha3(data: impl AsRef<[u8]>) -> [u8; 32] {
-    let mut hasher = Sha3_256::new();
-    hasher.update(data);
-    hasher.finalize().into()
-}
-
-impl api::SignedBlock {
-    pub fn gen_id(block_data: &[u8]) -> Result<api::BlockID, std::io::Error> {
-        Ok(sha3(block_data))
-    }
-}
-
-pub fn concat_u8(first: &[u8], second: &[u8]) -> Vec<u8> {
-    [first, second].concat()
-}
-
-impl api::Transaction {
-    pub fn gen_id(
-        parent_block_id: api::BlockID,
-        index: u32,
-    ) -> Result<TransactionID, std::io::Error> {
-        Ok(sha3(concat_u8(&parent_block_id, &index.to_be_bytes())))
     }
 }

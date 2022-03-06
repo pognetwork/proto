@@ -19,15 +19,8 @@ message Request {
     Request request = 2;
   }
 
-  message VoteProposal {
-    API.BlockHeader block_header = 1;
-    API.BlockData block_data = 2;
-  }
-
-  message FinalVote {
-    API.BlockHeader block_header = 1;
-    API.BlockData block_data = 2;
-  }
+  message VoteProposal { API.RawBlock block = 1; }
+  message FinalVote { API.RawBlock block = 1; }
 
   message Ping {
     // 10 peers for network discovery

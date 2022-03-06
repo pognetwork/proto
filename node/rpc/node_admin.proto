@@ -4,18 +4,18 @@ package NODEADMIN;
 import "node/api.proto";
 
 service NodeAdmin {
-  rpc GetPeers(Empty) returns (GetPeersResponse);
-  rpc GetVersion(Empty) returns (GetVersionResponse);
-  rpc UpgradeNode(UpgradeNodeRequest) returns (Empty);
-  rpc GetPendingBlocks(Empty) returns (GetPendingBlocksReply);
-  rpc GetBlockPoolSize(Empty) returns (GetBlockPoolSizeReply);
-  rpc GetNodeStatus(Empty) returns (GetNodeStatusReply);
-  rpc GetMode(Empty) returns (GetModeReply);
-  rpc SetMode(SetModeRequest) returns (Empty);
-  rpc GetNodeName(Empty) returns (GetNodeNameReply);
-  rpc SetNodeName(SetNodeNameRequest) returns (Empty);
-  rpc GetChain(Empty) returns (GetChainReply);
+  rpc GetMode(API.Empty) returns (GetModeReply);
+  rpc SetMode(SetModeRequest) returns (API.Empty);
   rpc GetLogs(GetLogsRequest) returns (GetLogsReply);
+  rpc GetChain(API.Empty) returns (GetChainReply);
+  rpc GetPeers(API.Empty) returns (GetPeersResponse);
+  rpc GetVersion(API.Empty) returns (GetVersionResponse);
+  rpc GetNodeName(API.Empty) returns (GetNodeNameReply);
+  rpc SetNodeName(SetNodeNameRequest) returns (API.Empty);
+  rpc UpgradeNode(UpgradeNodeRequest) returns (API.Empty);
+  rpc GetNodeStatus(API.Empty) returns (GetNodeStatusReply);
+  rpc GetPendingBlocks(API.Empty) returns (GetPendingBlocksReply);
+  rpc GetBlockPoolSize(API.Empty) returns (GetBlockPoolSizeReply);
 }
 
 enum Mode {
@@ -45,25 +45,15 @@ message Peer {
 }
 
 message GetPeersResponse { repeated Peer peers = 1; }
-
 message GetVersionResponse { string version = 1; }
 message UpgradeNodeRequest { string version = 1; }
-
-message GetPendingBlocksReply { repeated API.SignedBlock blocks = 1; }
-
+message GetPendingBlocksReply { repeated API.Block blocks = 1; }
 message GetBlockPoolSizeReply { uint64 length = 1; }
-
 message GetNodeStatusReply { Status status = 1; }
-
 message SetModeRequest { Mode mode = 1; }
 message GetModeReply { Mode current_mode = 1; }
-
 message GetNodeNameReply { string name = 1; }
 message SetNodeNameRequest { string new_name = 1; }
-
 message GetChainReply { string current_chain = 1; }
-
 message GetLogsRequest { uint64 since = 1; }
 message GetLogsReply { repeated string logs = 1; }
-
-message Empty {}

@@ -4,7 +4,6 @@
 ## Table of Contents
 
 - [node/rpc/node_admin.proto](#node_rpc_node_admin-proto)
-    - [Empty](#NODEADMIN-Empty)
     - [GetBlockPoolSizeReply](#NODEADMIN-GetBlockPoolSizeReply)
     - [GetChainReply](#NODEADMIN-GetChainReply)
     - [GetLogsReply](#NODEADMIN-GetLogsReply)
@@ -33,16 +32,6 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## node/rpc/node_admin.proto
-
-
-
-<a name="NODEADMIN-Empty"></a>
-
-### Empty
-
-
-
-
 
 
 
@@ -174,7 +163,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| blocks | [API.SignedBlock](#API-SignedBlock) | repeated |  |
+| blocks | [API.Block](#API-Block) | repeated |  |
 
 
 
@@ -298,18 +287,18 @@
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| GetPeers | [Empty](#NODEADMIN-Empty) | [GetPeersResponse](#NODEADMIN-GetPeersResponse) |  |
-| GetVersion | [Empty](#NODEADMIN-Empty) | [GetVersionResponse](#NODEADMIN-GetVersionResponse) |  |
-| UpgradeNode | [UpgradeNodeRequest](#NODEADMIN-UpgradeNodeRequest) | [Empty](#NODEADMIN-Empty) |  |
-| GetPendingBlocks | [Empty](#NODEADMIN-Empty) | [GetPendingBlocksReply](#NODEADMIN-GetPendingBlocksReply) |  |
-| GetBlockPoolSize | [Empty](#NODEADMIN-Empty) | [GetBlockPoolSizeReply](#NODEADMIN-GetBlockPoolSizeReply) |  |
-| GetNodeStatus | [Empty](#NODEADMIN-Empty) | [GetNodeStatusReply](#NODEADMIN-GetNodeStatusReply) |  |
-| GetMode | [Empty](#NODEADMIN-Empty) | [GetModeReply](#NODEADMIN-GetModeReply) |  |
-| SetMode | [SetModeRequest](#NODEADMIN-SetModeRequest) | [Empty](#NODEADMIN-Empty) |  |
-| GetNodeName | [Empty](#NODEADMIN-Empty) | [GetNodeNameReply](#NODEADMIN-GetNodeNameReply) |  |
-| SetNodeName | [SetNodeNameRequest](#NODEADMIN-SetNodeNameRequest) | [Empty](#NODEADMIN-Empty) |  |
-| GetChain | [Empty](#NODEADMIN-Empty) | [GetChainReply](#NODEADMIN-GetChainReply) |  |
+| GetMode | [.API.Empty](#API-Empty) | [GetModeReply](#NODEADMIN-GetModeReply) |  |
+| SetMode | [SetModeRequest](#NODEADMIN-SetModeRequest) | [.API.Empty](#API-Empty) |  |
 | GetLogs | [GetLogsRequest](#NODEADMIN-GetLogsRequest) | [GetLogsReply](#NODEADMIN-GetLogsReply) |  |
+| GetChain | [.API.Empty](#API-Empty) | [GetChainReply](#NODEADMIN-GetChainReply) |  |
+| GetPeers | [.API.Empty](#API-Empty) | [GetPeersResponse](#NODEADMIN-GetPeersResponse) |  |
+| GetVersion | [.API.Empty](#API-Empty) | [GetVersionResponse](#NODEADMIN-GetVersionResponse) |  |
+| GetNodeName | [.API.Empty](#API-Empty) | [GetNodeNameReply](#NODEADMIN-GetNodeNameReply) |  |
+| SetNodeName | [SetNodeNameRequest](#NODEADMIN-SetNodeNameRequest) | [.API.Empty](#API-Empty) |  |
+| UpgradeNode | [UpgradeNodeRequest](#NODEADMIN-UpgradeNodeRequest) | [.API.Empty](#API-Empty) |  |
+| GetNodeStatus | [.API.Empty](#API-Empty) | [GetNodeStatusReply](#NODEADMIN-GetNodeStatusReply) |  |
+| GetPendingBlocks | [.API.Empty](#API-Empty) | [GetPendingBlocksReply](#NODEADMIN-GetPendingBlocksReply) |  |
+| GetBlockPoolSize | [.API.Empty](#API-Empty) | [GetBlockPoolSizeReply](#NODEADMIN-GetBlockPoolSizeReply) |  |
 
  
 

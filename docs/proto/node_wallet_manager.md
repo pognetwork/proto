@@ -8,7 +8,6 @@
     - [AddWalletRequest](#NODEWALLETMANAGER-AddWalletRequest)
     - [DecryptMessageReply](#NODEWALLETMANAGER-DecryptMessageReply)
     - [DecryptMessageRequest](#NODEWALLETMANAGER-DecryptMessageRequest)
-    - [Empty](#NODEWALLETMANAGER-Empty)
     - [EncryptMessageReply](#NODEWALLETMANAGER-EncryptMessageReply)
     - [EncryptMessageRequest](#NODEWALLETMANAGER-EncryptMessageRequest)
     - [GetWalletReply](#NODEWALLETMANAGER-GetWalletReply)
@@ -85,16 +84,6 @@
 | ----- | ---- | ----- | ----------- |
 | encrypted_message | [string](#string) |  |  |
 | address | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name="NODEWALLETMANAGER-Empty"></a>
-
-### Empty
-
 
 
 
@@ -190,7 +179,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| signed_block | [API.SignedBlock](#API-SignedBlock) |  |  |
+| block | [bytes](#bytes) |  |  |
 
 
 
@@ -205,8 +194,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| unsigned_block | [API.SignedBlock](#API-SignedBlock) |  |  |
-| address | [bytes](#bytes) |  |  |
+| unsigned_block | [API.Block](#API-Block) |  |  |
 
 
 
@@ -273,13 +261,13 @@
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| GetWallets | [Empty](#NODEWALLETMANAGER-Empty) | [GetWalletsReply](#NODEWALLETMANAGER-GetWalletsReply) |  |
+| GetWallets | [.API.Empty](#API-Empty) | [GetWalletsReply](#NODEWALLETMANAGER-GetWalletsReply) |  |
 | GetWallet | [GetWalletRequest](#NODEWALLETMANAGER-GetWalletRequest) | [GetWalletReply](#NODEWALLETMANAGER-GetWalletReply) |  |
 | AddWallet | [AddWalletRequest](#NODEWALLETMANAGER-AddWalletRequest) | [AddWalletReply](#NODEWALLETMANAGER-AddWalletReply) |  |
-| RemoveWallet | [RemoveWalletRequest](#NODEWALLETMANAGER-RemoveWalletRequest) | [Empty](#NODEWALLETMANAGER-Empty) |  |
+| RemoveWallet | [RemoveWalletRequest](#NODEWALLETMANAGER-RemoveWalletRequest) | [.API.Empty](#API-Empty) |  |
 | SignMessage | [SignMessageRequest](#NODEWALLETMANAGER-SignMessageRequest) | [SignMessageReply](#NODEWALLETMANAGER-SignMessageReply) |  |
 | SignBlock | [SignBlockRequest](#NODEWALLETMANAGER-SignBlockRequest) | [SignBlockReply](#NODEWALLETMANAGER-SignBlockReply) |  |
-| VerifySignature | [VerifySignatureRequest](#NODEWALLETMANAGER-VerifySignatureRequest) | [Empty](#NODEWALLETMANAGER-Empty) |  |
+| VerifySignature | [VerifySignatureRequest](#NODEWALLETMANAGER-VerifySignatureRequest) | [.API.Empty](#API-Empty) |  |
 | EncryptMessage | [EncryptMessageRequest](#NODEWALLETMANAGER-EncryptMessageRequest) | [EncryptMessageReply](#NODEWALLETMANAGER-EncryptMessageReply) |  |
 | DecryptMessage | [DecryptMessageRequest](#NODEWALLETMANAGER-DecryptMessageRequest) | [DecryptMessageReply](#NODEWALLETMANAGER-DecryptMessageReply) |  |
 

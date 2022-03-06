@@ -73,7 +73,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| block | [API.SignedBlock](#API-SignedBlock) |  |  |
+| block | [API.Block](#API-Block) |  |  |
 
 
 
@@ -174,7 +174,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| blocks | [API.SignedBlock](#API-SignedBlock) | repeated |  |
+| blocks | [API.Block](#API-Block) | repeated |  |
 
 
 

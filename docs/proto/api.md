@@ -4,9 +4,11 @@
 ## Table of Contents
 
 - [node/api.proto](#node_api-proto)
+    - [Block](#API-Block)
     - [BlockData](#API-BlockData)
     - [BlockHeader](#API-BlockHeader)
-    - [SignedBlock](#API-SignedBlock)
+    - [Empty](#API-Empty)
+    - [RawBlock](#API-RawBlock)
     - [Transaction](#API-Transaction)
     - [Transaction.TxClaim](#API-Transaction-TxClaim)
     - [Transaction.TxDelegate](#API-Transaction-TxDelegate)
@@ -25,6 +27,24 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## node/api.proto
+
+
+
+<a name="API-Block"></a>
+
+### Block
+Block is a struct with both header, data and raw data
+It should be used for things like api responses when querying blocks
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| header | [BlockHeader](#API-BlockHeader) |  |  |
+| data | [BlockData](#API-BlockData) |  |  |
+| block_id | [bytes](#bytes) |  |  |
+
+
+
 
 
 
@@ -65,16 +85,28 @@
 
 
 
-<a name="API-SignedBlock"></a>
+<a name="API-Empty"></a>
 
-### SignedBlock
+### Empty
 
+
+
+
+
+
+
+<a name="API-RawBlock"></a>
+
+### RawBlock
+A minimal version of Block
+Should be used in cases where blocks need to be verified like in p2p
+communication or when re-building/verifieng the entire chain
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | header | [BlockHeader](#API-BlockHeader) |  |  |
-| data | [BlockData](#API-BlockData) |  |  |
+| data | [bytes](#bytes) |  |  |
 
 
 
