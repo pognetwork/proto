@@ -13,6 +13,7 @@ pub mod api {
     pub type TransactionID = [u8; 32];
 
     /// SignedBlock is the preferred way to deal with blocks. From/Into Conversions are provided for `RawBlock` for convenience.
+    #[derive(Debug, Clone)]
     pub struct SignedBlock {
         pub header: BlockHeader,
         pub data: BlockData,
