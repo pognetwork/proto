@@ -25,6 +25,17 @@ fn data_err(err: &str) -> std::io::Error {
     std::io::Error::new(std::io::ErrorKind::InvalidData, err)
 }
 
+impl From<api::SignedBlock> for api::Block {
+    fn from(block: api::SignedBlock) -> Self {
+        let block_id = block.get_id().to_vec();
+        api::Block {
+            data: Some(block.data),
+            block_id,
+            header: Some(block.header),
+        }
+    }
+}
+
 impl From<api::SignedBlock> for api::RawBlock {
     fn from(block: api::SignedBlock) -> Self {
         api::RawBlock {
