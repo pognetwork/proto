@@ -3,39 +3,39 @@
 
 ## Table of Contents
 
-- [node/rpc/block.proto](#node/rpc/block.proto)
-    - [BalanceReply](#BLOCK.BalanceReply)
-    - [BalanceRequest](#BLOCK.BalanceRequest)
-    - [BlockByIDReply](#BLOCK.BlockByIDReply)
-    - [BlockByIDRequest](#BLOCK.BlockByIDRequest)
-    - [BlockHeightReply](#BLOCK.BlockHeightReply)
-    - [BlockHeightRequest](#BLOCK.BlockHeightRequest)
-    - [DelegateReply](#BLOCK.DelegateReply)
-    - [DelegateRequest](#BLOCK.DelegateRequest)
-    - [Empty](#BLOCK.Empty)
-    - [PendingBlockReply](#BLOCK.PendingBlockReply)
-    - [TXByIDReply](#BLOCK.TXByIDReply)
-    - [TXByIDRequest](#BLOCK.TXByIDRequest)
-    - [TXByIndexReply](#BLOCK.TXByIndexReply)
-    - [TXByIndexRequest](#BLOCK.TXByIndexRequest)
-    - [UnacknowledgedTXReply](#BLOCK.UnacknowledgedTXReply)
-    - [VotingPowerReply](#BLOCK.VotingPowerReply)
-    - [VotingPowerRequest](#BLOCK.VotingPowerRequest)
+- [node/rpc/block.proto](#node_rpc_block-proto)
+    - [BalanceReply](#BLOCK-BalanceReply)
+    - [BalanceRequest](#BLOCK-BalanceRequest)
+    - [BlockByIDReply](#BLOCK-BlockByIDReply)
+    - [BlockByIDRequest](#BLOCK-BlockByIDRequest)
+    - [BlockHeightReply](#BLOCK-BlockHeightReply)
+    - [BlockHeightRequest](#BLOCK-BlockHeightRequest)
+    - [DelegateReply](#BLOCK-DelegateReply)
+    - [DelegateRequest](#BLOCK-DelegateRequest)
+    - [Empty](#BLOCK-Empty)
+    - [PendingBlockReply](#BLOCK-PendingBlockReply)
+    - [TXByIDReply](#BLOCK-TXByIDReply)
+    - [TXByIDRequest](#BLOCK-TXByIDRequest)
+    - [TXByIndexReply](#BLOCK-TXByIndexReply)
+    - [TXByIndexRequest](#BLOCK-TXByIndexRequest)
+    - [UnacknowledgedTXReply](#BLOCK-UnacknowledgedTXReply)
+    - [VotingPowerReply](#BLOCK-VotingPowerReply)
+    - [VotingPowerRequest](#BLOCK-VotingPowerRequest)
   
-    - [Block](#BLOCK.Block)
+    - [Block](#BLOCK-Block)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="node/rpc/block.proto"></a>
+<a name="node_rpc_block-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## node/rpc/block.proto
 
 
 
-<a name="BLOCK.BalanceReply"></a>
+<a name="BLOCK-BalanceReply"></a>
 
 ### BalanceReply
 
@@ -50,7 +50,7 @@
 
 
 
-<a name="BLOCK.BalanceRequest"></a>
+<a name="BLOCK-BalanceRequest"></a>
 
 ### BalanceRequest
 
@@ -65,7 +65,7 @@
 
 
 
-<a name="BLOCK.BlockByIDReply"></a>
+<a name="BLOCK-BlockByIDReply"></a>
 
 ### BlockByIDReply
 
@@ -73,14 +73,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| block | [API.SignedBlock](#API.SignedBlock) |  |  |
+| block | [API.SignedBlock](#API-SignedBlock) |  |  |
 
 
 
 
 
 
-<a name="BLOCK.BlockByIDRequest"></a>
+<a name="BLOCK-BlockByIDRequest"></a>
 
 ### BlockByIDRequest
 
@@ -95,7 +95,7 @@
 
 
 
-<a name="BLOCK.BlockHeightReply"></a>
+<a name="BLOCK-BlockHeightReply"></a>
 
 ### BlockHeightReply
 
@@ -110,7 +110,7 @@
 
 
 
-<a name="BLOCK.BlockHeightRequest"></a>
+<a name="BLOCK-BlockHeightRequest"></a>
 
 ### BlockHeightRequest
 
@@ -126,7 +126,7 @@
 
 
 
-<a name="BLOCK.DelegateReply"></a>
+<a name="BLOCK-DelegateReply"></a>
 
 ### DelegateReply
 
@@ -141,7 +141,7 @@
 
 
 
-<a name="BLOCK.DelegateRequest"></a>
+<a name="BLOCK-DelegateRequest"></a>
 
 ### DelegateRequest
 
@@ -156,7 +156,7 @@
 
 
 
-<a name="BLOCK.Empty"></a>
+<a name="BLOCK-Empty"></a>
 
 ### Empty
 
@@ -166,7 +166,7 @@
 
 
 
-<a name="BLOCK.PendingBlockReply"></a>
+<a name="BLOCK-PendingBlockReply"></a>
 
 ### PendingBlockReply
 
@@ -174,14 +174,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| blocks | [API.SignedBlock](#API.SignedBlock) | repeated |  |
+| blocks | [API.SignedBlock](#API-SignedBlock) | repeated |  |
 
 
 
 
 
 
-<a name="BLOCK.TXByIDReply"></a>
+<a name="BLOCK-TXByIDReply"></a>
 
 ### TXByIDReply
 
@@ -189,14 +189,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| transaction | [API.Transaction](#API.Transaction) |  |  |
+| transaction | [API.Transaction](#API-Transaction) |  |  |
 
 
 
 
 
 
-<a name="BLOCK.TXByIDRequest"></a>
+<a name="BLOCK-TXByIDRequest"></a>
 
 ### TXByIDRequest
 
@@ -211,7 +211,7 @@
 
 
 
-<a name="BLOCK.TXByIndexReply"></a>
+<a name="BLOCK-TXByIndexReply"></a>
 
 ### TXByIndexReply
 
@@ -219,14 +219,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| transaction | [API.Transaction](#API.Transaction) |  |  |
+| transaction | [API.Transaction](#API-Transaction) |  |  |
 
 
 
 
 
 
-<a name="BLOCK.TXByIndexRequest"></a>
+<a name="BLOCK-TXByIndexRequest"></a>
 
 ### TXByIndexRequest
 
@@ -242,7 +242,7 @@
 
 
 
-<a name="BLOCK.UnacknowledgedTXReply"></a>
+<a name="BLOCK-UnacknowledgedTXReply"></a>
 
 ### UnacknowledgedTXReply
 
@@ -250,14 +250,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| transactions | [API.Transaction](#API.Transaction) | repeated |  |
+| transactions | [API.Transaction](#API-Transaction) | repeated |  |
 
 
 
 
 
 
-<a name="BLOCK.VotingPowerReply"></a>
+<a name="BLOCK-VotingPowerReply"></a>
 
 ### VotingPowerReply
 
@@ -272,7 +272,7 @@
 
 
 
-<a name="BLOCK.VotingPowerRequest"></a>
+<a name="BLOCK-VotingPowerRequest"></a>
 
 ### VotingPowerRequest
 
@@ -294,22 +294,22 @@
  
 
 
-<a name="BLOCK.Block"></a>
+<a name="BLOCK-Block"></a>
 
 ### Block
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| GetBalance | [BalanceRequest](#BLOCK.BalanceRequest) | [BalanceReply](#BLOCK.BalanceReply) | GetBalance accepts BalanceRequests and returns BalanceReplies |
-| GetBlockHeight | [BlockHeightRequest](#BLOCK.BlockHeightRequest) | [BlockHeightReply](#BLOCK.BlockHeightReply) | GetNextBlockHeight uses an address to get the latest block index to then return the next index |
-| GetVotingPower | [VotingPowerRequest](#BLOCK.VotingPowerRequest) | [VotingPowerReply](#BLOCK.VotingPowerReply) | GetVotingPower uses an address to get the voting power of an account |
-| GetBlockByID | [BlockByIDRequest](#BLOCK.BlockByIDRequest) | [BlockByIDReply](#BLOCK.BlockByIDReply) | GetBlockByID uses the hash of a block to get the data |
-| GetDelegate | [DelegateRequest](#BLOCK.DelegateRequest) | [DelegateReply](#BLOCK.DelegateReply) | GetDelegate uses an account address to return a address of the delegate |
-| GetPendingBlocks | [Empty](#BLOCK.Empty) | [PendingBlockReply](#BLOCK.PendingBlockReply) | GetPendingBlocks gets all blocks that havent been processed |
-| GetUnacknowledgedTX | [Empty](#BLOCK.Empty) | [UnacknowledgedTXReply](#BLOCK.UnacknowledgedTXReply) | GetUnacknowledgedTX gets a number of how many transactions are unacknowledged |
-| GetTXByID | [TXByIDRequest](#BLOCK.TXByIDRequest) | [TXByIDReply](#BLOCK.TXByIDReply) | GetTXByID uses a transaction ID to get a transaction |
-| GetTXByIndex | [TXByIndexRequest](#BLOCK.TXByIndexRequest) | [TXByIndexReply](#BLOCK.TXByIndexReply) | GetTXByIndex uses an index for inside a block to return a transaction |
+| GetBalance | [BalanceRequest](#BLOCK-BalanceRequest) | [BalanceReply](#BLOCK-BalanceReply) | GetBalance accepts BalanceRequests and returns BalanceReplies |
+| GetBlockHeight | [BlockHeightRequest](#BLOCK-BlockHeightRequest) | [BlockHeightReply](#BLOCK-BlockHeightReply) | GetNextBlockHeight uses an address to get the latest block index to then return the next index |
+| GetVotingPower | [VotingPowerRequest](#BLOCK-VotingPowerRequest) | [VotingPowerReply](#BLOCK-VotingPowerReply) | GetVotingPower uses an address to get the voting power of an account |
+| GetBlockByID | [BlockByIDRequest](#BLOCK-BlockByIDRequest) | [BlockByIDReply](#BLOCK-BlockByIDReply) | GetBlockByID uses the hash of a block to get the data |
+| GetDelegate | [DelegateRequest](#BLOCK-DelegateRequest) | [DelegateReply](#BLOCK-DelegateReply) | GetDelegate uses an account address to return a address of the delegate |
+| GetPendingBlocks | [Empty](#BLOCK-Empty) | [PendingBlockReply](#BLOCK-PendingBlockReply) | GetPendingBlocks gets all blocks that havent been processed |
+| GetUnacknowledgedTX | [Empty](#BLOCK-Empty) | [UnacknowledgedTXReply](#BLOCK-UnacknowledgedTXReply) | GetUnacknowledgedTX gets a number of how many transactions are unacknowledged |
+| GetTXByID | [TXByIDRequest](#BLOCK-TXByIDRequest) | [TXByIDReply](#BLOCK-TXByIDReply) | GetTXByID uses a transaction ID to get a transaction |
+| GetTXByIndex | [TXByIndexRequest](#BLOCK-TXByIndexRequest) | [TXByIndexReply](#BLOCK-TXByIndexReply) | GetTXByIndex uses an index for inside a block to return a transaction |
 
  
 

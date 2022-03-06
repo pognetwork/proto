@@ -3,40 +3,40 @@
 
 ## Table of Contents
 
-- [node/rpc/node_admin.proto](#node/rpc/node_admin.proto)
-    - [Empty](#NODEADMIN.Empty)
-    - [GetBlockPoolSizeReply](#NODEADMIN.GetBlockPoolSizeReply)
-    - [GetChainReply](#NODEADMIN.GetChainReply)
-    - [GetLogsReply](#NODEADMIN.GetLogsReply)
-    - [GetLogsRequest](#NODEADMIN.GetLogsRequest)
-    - [GetModeReply](#NODEADMIN.GetModeReply)
-    - [GetNodeNameReply](#NODEADMIN.GetNodeNameReply)
-    - [GetNodeStatusReply](#NODEADMIN.GetNodeStatusReply)
-    - [GetPeersResponse](#NODEADMIN.GetPeersResponse)
-    - [GetPendingBlocksReply](#NODEADMIN.GetPendingBlocksReply)
-    - [GetVersionResponse](#NODEADMIN.GetVersionResponse)
-    - [Peer](#NODEADMIN.Peer)
-    - [SetModeRequest](#NODEADMIN.SetModeRequest)
-    - [SetNodeNameRequest](#NODEADMIN.SetNodeNameRequest)
-    - [UpgradeNodeRequest](#NODEADMIN.UpgradeNodeRequest)
+- [node/rpc/node_admin.proto](#node_rpc_node_admin-proto)
+    - [Empty](#NODEADMIN-Empty)
+    - [GetBlockPoolSizeReply](#NODEADMIN-GetBlockPoolSizeReply)
+    - [GetChainReply](#NODEADMIN-GetChainReply)
+    - [GetLogsReply](#NODEADMIN-GetLogsReply)
+    - [GetLogsRequest](#NODEADMIN-GetLogsRequest)
+    - [GetModeReply](#NODEADMIN-GetModeReply)
+    - [GetNodeNameReply](#NODEADMIN-GetNodeNameReply)
+    - [GetNodeStatusReply](#NODEADMIN-GetNodeStatusReply)
+    - [GetPeersResponse](#NODEADMIN-GetPeersResponse)
+    - [GetPendingBlocksReply](#NODEADMIN-GetPendingBlocksReply)
+    - [GetVersionResponse](#NODEADMIN-GetVersionResponse)
+    - [Peer](#NODEADMIN-Peer)
+    - [SetModeRequest](#NODEADMIN-SetModeRequest)
+    - [SetNodeNameRequest](#NODEADMIN-SetNodeNameRequest)
+    - [UpgradeNodeRequest](#NODEADMIN-UpgradeNodeRequest)
   
-    - [Mode](#NODEADMIN.Mode)
-    - [Status](#NODEADMIN.Status)
+    - [Mode](#NODEADMIN-Mode)
+    - [Status](#NODEADMIN-Status)
   
-    - [NodeAdmin](#NODEADMIN.NodeAdmin)
+    - [NodeAdmin](#NODEADMIN-NodeAdmin)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="node/rpc/node_admin.proto"></a>
+<a name="node_rpc_node_admin-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## node/rpc/node_admin.proto
 
 
 
-<a name="NODEADMIN.Empty"></a>
+<a name="NODEADMIN-Empty"></a>
 
 ### Empty
 
@@ -46,7 +46,7 @@
 
 
 
-<a name="NODEADMIN.GetBlockPoolSizeReply"></a>
+<a name="NODEADMIN-GetBlockPoolSizeReply"></a>
 
 ### GetBlockPoolSizeReply
 
@@ -61,7 +61,7 @@
 
 
 
-<a name="NODEADMIN.GetChainReply"></a>
+<a name="NODEADMIN-GetChainReply"></a>
 
 ### GetChainReply
 
@@ -76,7 +76,7 @@
 
 
 
-<a name="NODEADMIN.GetLogsReply"></a>
+<a name="NODEADMIN-GetLogsReply"></a>
 
 ### GetLogsReply
 
@@ -91,7 +91,7 @@
 
 
 
-<a name="NODEADMIN.GetLogsRequest"></a>
+<a name="NODEADMIN-GetLogsRequest"></a>
 
 ### GetLogsRequest
 
@@ -106,7 +106,7 @@
 
 
 
-<a name="NODEADMIN.GetModeReply"></a>
+<a name="NODEADMIN-GetModeReply"></a>
 
 ### GetModeReply
 
@@ -114,14 +114,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| current_mode | [Mode](#NODEADMIN.Mode) |  |  |
+| current_mode | [Mode](#NODEADMIN-Mode) |  |  |
 
 
 
 
 
 
-<a name="NODEADMIN.GetNodeNameReply"></a>
+<a name="NODEADMIN-GetNodeNameReply"></a>
 
 ### GetNodeNameReply
 
@@ -136,7 +136,7 @@
 
 
 
-<a name="NODEADMIN.GetNodeStatusReply"></a>
+<a name="NODEADMIN-GetNodeStatusReply"></a>
 
 ### GetNodeStatusReply
 
@@ -144,14 +144,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| status | [Status](#NODEADMIN.Status) |  |  |
+| status | [Status](#NODEADMIN-Status) |  |  |
 
 
 
 
 
 
-<a name="NODEADMIN.GetPeersResponse"></a>
+<a name="NODEADMIN-GetPeersResponse"></a>
 
 ### GetPeersResponse
 
@@ -159,14 +159,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| peers | [Peer](#NODEADMIN.Peer) | repeated |  |
+| peers | [Peer](#NODEADMIN-Peer) | repeated |  |
 
 
 
 
 
 
-<a name="NODEADMIN.GetPendingBlocksReply"></a>
+<a name="NODEADMIN-GetPendingBlocksReply"></a>
 
 ### GetPendingBlocksReply
 
@@ -174,14 +174,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| blocks | [API.SignedBlock](#API.SignedBlock) | repeated |  |
+| blocks | [API.SignedBlock](#API-SignedBlock) | repeated |  |
 
 
 
 
 
 
-<a name="NODEADMIN.GetVersionResponse"></a>
+<a name="NODEADMIN-GetVersionResponse"></a>
 
 ### GetVersionResponse
 
@@ -196,7 +196,7 @@
 
 
 
-<a name="NODEADMIN.Peer"></a>
+<a name="NODEADMIN-Peer"></a>
 
 ### Peer
 
@@ -212,7 +212,7 @@
 
 
 
-<a name="NODEADMIN.SetModeRequest"></a>
+<a name="NODEADMIN-SetModeRequest"></a>
 
 ### SetModeRequest
 
@@ -220,14 +220,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| mode | [Mode](#NODEADMIN.Mode) |  |  |
+| mode | [Mode](#NODEADMIN-Mode) |  |  |
 
 
 
 
 
 
-<a name="NODEADMIN.SetNodeNameRequest"></a>
+<a name="NODEADMIN-SetNodeNameRequest"></a>
 
 ### SetNodeNameRequest
 
@@ -242,7 +242,7 @@
 
 
 
-<a name="NODEADMIN.UpgradeNodeRequest"></a>
+<a name="NODEADMIN-UpgradeNodeRequest"></a>
 
 ### UpgradeNodeRequest
 
@@ -259,7 +259,7 @@
  
 
 
-<a name="NODEADMIN.Mode"></a>
+<a name="NODEADMIN-Mode"></a>
 
 ### Mode
 
@@ -273,7 +273,7 @@
 
 
 
-<a name="NODEADMIN.Status"></a>
+<a name="NODEADMIN-Status"></a>
 
 ### Status
 
@@ -291,25 +291,25 @@
  
 
 
-<a name="NODEADMIN.NodeAdmin"></a>
+<a name="NODEADMIN-NodeAdmin"></a>
 
 ### NodeAdmin
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| GetPeers | [Empty](#NODEADMIN.Empty) | [GetPeersResponse](#NODEADMIN.GetPeersResponse) |  |
-| GetVersion | [Empty](#NODEADMIN.Empty) | [GetVersionResponse](#NODEADMIN.GetVersionResponse) |  |
-| UpgradeNode | [UpgradeNodeRequest](#NODEADMIN.UpgradeNodeRequest) | [Empty](#NODEADMIN.Empty) |  |
-| GetPendingBlocks | [Empty](#NODEADMIN.Empty) | [GetPendingBlocksReply](#NODEADMIN.GetPendingBlocksReply) |  |
-| GetBlockPoolSize | [Empty](#NODEADMIN.Empty) | [GetBlockPoolSizeReply](#NODEADMIN.GetBlockPoolSizeReply) |  |
-| GetNodeStatus | [Empty](#NODEADMIN.Empty) | [GetNodeStatusReply](#NODEADMIN.GetNodeStatusReply) |  |
-| GetMode | [Empty](#NODEADMIN.Empty) | [GetModeReply](#NODEADMIN.GetModeReply) |  |
-| SetMode | [SetModeRequest](#NODEADMIN.SetModeRequest) | [Empty](#NODEADMIN.Empty) |  |
-| GetNodeName | [Empty](#NODEADMIN.Empty) | [GetNodeNameReply](#NODEADMIN.GetNodeNameReply) |  |
-| SetNodeName | [SetNodeNameRequest](#NODEADMIN.SetNodeNameRequest) | [Empty](#NODEADMIN.Empty) |  |
-| GetChain | [Empty](#NODEADMIN.Empty) | [GetChainReply](#NODEADMIN.GetChainReply) |  |
-| GetLogs | [GetLogsRequest](#NODEADMIN.GetLogsRequest) | [GetLogsReply](#NODEADMIN.GetLogsReply) |  |
+| GetPeers | [Empty](#NODEADMIN-Empty) | [GetPeersResponse](#NODEADMIN-GetPeersResponse) |  |
+| GetVersion | [Empty](#NODEADMIN-Empty) | [GetVersionResponse](#NODEADMIN-GetVersionResponse) |  |
+| UpgradeNode | [UpgradeNodeRequest](#NODEADMIN-UpgradeNodeRequest) | [Empty](#NODEADMIN-Empty) |  |
+| GetPendingBlocks | [Empty](#NODEADMIN-Empty) | [GetPendingBlocksReply](#NODEADMIN-GetPendingBlocksReply) |  |
+| GetBlockPoolSize | [Empty](#NODEADMIN-Empty) | [GetBlockPoolSizeReply](#NODEADMIN-GetBlockPoolSizeReply) |  |
+| GetNodeStatus | [Empty](#NODEADMIN-Empty) | [GetNodeStatusReply](#NODEADMIN-GetNodeStatusReply) |  |
+| GetMode | [Empty](#NODEADMIN-Empty) | [GetModeReply](#NODEADMIN-GetModeReply) |  |
+| SetMode | [SetModeRequest](#NODEADMIN-SetModeRequest) | [Empty](#NODEADMIN-Empty) |  |
+| GetNodeName | [Empty](#NODEADMIN-Empty) | [GetNodeNameReply](#NODEADMIN-GetNodeNameReply) |  |
+| SetNodeName | [SetNodeNameRequest](#NODEADMIN-SetNodeNameRequest) | [Empty](#NODEADMIN-Empty) |  |
+| GetChain | [Empty](#NODEADMIN-Empty) | [GetChainReply](#NODEADMIN-GetChainReply) |  |
+| GetLogs | [GetLogsRequest](#NODEADMIN-GetLogsRequest) | [GetLogsReply](#NODEADMIN-GetLogsReply) |  |
 
  
 

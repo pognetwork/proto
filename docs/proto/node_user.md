@@ -3,24 +3,24 @@
 
 ## Table of Contents
 
-- [node/rpc/node_user.proto](#node/rpc/node_user.proto)
-    - [LoginReply](#NODEUSER.LoginReply)
-    - [LoginRequest](#NODEUSER.LoginRequest)
+- [node/rpc/node_user.proto](#node_rpc_node_user-proto)
+    - [LoginReply](#NODEUSER-LoginReply)
+    - [LoginRequest](#NODEUSER-LoginRequest)
   
-    - [NodeUser](#NODEUSER.NodeUser)
+    - [NodeUser](#NODEUSER-NodeUser)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="node/rpc/node_user.proto"></a>
+<a name="node_rpc_node_user-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## node/rpc/node_user.proto
 
 
 
-<a name="NODEUSER.LoginReply"></a>
+<a name="NODEUSER-LoginReply"></a>
 
 ### LoginReply
 
@@ -35,7 +35,7 @@
 
 
 
-<a name="NODEUSER.LoginRequest"></a>
+<a name="NODEUSER-LoginRequest"></a>
 
 ### LoginRequest
 
@@ -57,14 +57,14 @@
  
 
 
-<a name="NODEUSER.NodeUser"></a>
+<a name="NODEUSER-NodeUser"></a>
 
 ### NodeUser
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| Login | [LoginRequest](#NODEUSER.LoginRequest) | [LoginReply](#NODEUSER.LoginReply) |  |
+| Login | [LoginRequest](#NODEUSER-LoginRequest) | [LoginReply](#NODEUSER-LoginReply) |  |
 
  
 

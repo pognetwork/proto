@@ -39,8 +39,13 @@ message Transaction {
 }
 
 message SignedBlock {
+  BlockHeader header = 1;
+  BlockData data = 2;
+}
+
+message BlockHeader {
   // 64 bytes (for Ed25519, might be expanded later)
-  bytes signature = 4;
+  bytes signature = 1;
 
   // 32 bytes (for Ed25519)
   // account's public key
@@ -50,32 +55,24 @@ message SignedBlock {
   // seconds of UTC time since Unix epoch
   // will be set by the first node receiving the transaction
   uint64 timestamp = 7;
-
-  // data is the field that will be signed and hashed to generate the values
-  // above
-  BlockData data = 6;
-  message BlockData {
-    BlockVersion version = 1;
-    SigType signatureType = 2;
-
-    // the new account balance after applying all transactions
-    uint64 balance = 4;
-
-    // the block height (block index)
-    uint64 height = 5;
-
-    // previous block, empty if first block
-    bytes previous = 6;
-
-    // transactions contained in a block
-    // - Can't contain duplicates
-    // - Can't contain more than 255 transactions
-    repeated Transaction transactions = 7;
-  }
 }
 
-// Calls for a vote on conflicting blocks (e.g when double spending)
-message CallVoteRequest {}
+message BlockData {
+  BlockVersion version = 1;
+  SigType signatureType = 2;
 
-// Vote casts a vote on which of multiple conflicting block will be chosen
-message VoteResponse {}
+  // the new account balance after applying all transactions
+  uint64 balance = 4;
+
+  // the block height (block index)
+  uint64 height = 5;
+
+  // previous block, empty if first block
+  bytes previous = 6;
+
+  // transactions contained in a block
+  // - Can't contain duplicates
+  // - Can't contain more than 255 transactions
+  // - Orderd (as per protobuf specification)
+  repeated Transaction transactions = 7;
+}
