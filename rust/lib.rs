@@ -58,6 +58,15 @@ impl api::SignedBlock {
     pub fn get_id(&self) -> api::BlockID {
         util::sha3(&self.data_raw)
     }
+
+    pub fn new(header: api::BlockHeader, data: api::BlockData) -> Self {
+        let data_raw = data.encode_to_vec();
+        Self {
+            data,
+            header,
+            data_raw,
+        }
+    }
 }
 
 impl api::Transaction {
