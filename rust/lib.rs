@@ -1,7 +1,9 @@
 use std::convert::TryFrom;
 
 use api::TransactionID;
-use prost::Message;
+pub use prost::{DecodeError, EncodeError};
+pub use prost::Message;
+
 #[path = "generated/api.rs"]
 mod _api;
 mod util;
@@ -12,7 +14,7 @@ pub mod api {
     pub type BlockID = [u8; 32];
     pub type TransactionID = [u8; 32];
 
-    /// SignedBlock is the preferred way to deal with blocks. From/Into Conversions are provided for `RawBlock` for convenience.
+    /// SignedBlock is the preferred way to deal with blocks. From/Into Conversions are provided for `Block`/`RawBlock` for convenience.
     #[derive(Debug, Clone)]
     pub struct SignedBlock {
         pub header: BlockHeader,
