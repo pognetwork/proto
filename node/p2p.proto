@@ -15,7 +15,7 @@ message ResponseHeader {
 
 message Peer { bytes ip = 1; }
 
-enum Failure { MalformedRequest = 1; }
+enum Failure { MalformedRequest = 0; }
 
 message ResponseData {
   message Success {}
