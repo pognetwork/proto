@@ -16,11 +16,8 @@ message ResponseHeader {
 message Peer { bytes ip = 1; }
 
 enum Failure { MalformedRequest = 0; }
-
-message ResponseData {
+message ResponseBody {
   message Success {}
-  message Failure { Failure failure = 1; }
-
   message Pong { repeated Peer peers = 1; }
 
   // seconds of UTC time since Unix epoch
@@ -52,10 +49,7 @@ message RequestData {
   message VoteProposal { API.RawBlock block = 1; }
   message FinalVote { API.RawBlock block = 1; }
 
-  message Ping {
-    // 10 peers for network discovery
-    repeated bytes peers = 1;
-  }
+  message Ping { repeated Peer peers = 1; }
 
   API.SigType signatureType = 1;
 
