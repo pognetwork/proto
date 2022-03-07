@@ -22,7 +22,6 @@ message ResponseBody {
 
   // seconds of UTC time since Unix epoch
   uint64 timestamp = 2;
-
   oneof data {
     Success success = 3;
     Failure failure = 4;
@@ -40,22 +39,18 @@ message RequestHeader {
   bytes publicKey = 5;
 }
 
-message RequestData {
+message RequestBody {
   message Forward {
     RequestHeader requestHeader = 1;
-    RequestData request = 2;
+    RequestBody request = 2;
   }
-
   message VoteProposal { API.RawBlock block = 1; }
   message FinalVote { API.RawBlock block = 1; }
-
   message Ping { repeated Peer peers = 1; }
-
   API.SigType signatureType = 1;
 
   // seconds of UTC time since Unix epoch
   uint64 timestamp = 2;
-
   oneof data {
     Ping ping = 4;
     Forward forward = 5;
