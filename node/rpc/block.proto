@@ -3,7 +3,7 @@ package BLOCK;
 
 import "node/api.proto";
 
-service Block {
+service BlockService {
   // GetBalance accepts BalanceRequests and returns BalanceReplies
   rpc GetBalance(BalanceRequest) returns (BalanceReply);
   // GetNextBlockHeight uses an address to get the latest block index to then

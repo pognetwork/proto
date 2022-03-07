@@ -22,7 +22,7 @@
     - [VotingPowerReply](#BLOCK-VotingPowerReply)
     - [VotingPowerRequest](#BLOCK-VotingPowerRequest)
   
-    - [Block](#BLOCK-Block)
+    - [BlockService](#BLOCK-BlockService)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -294,9 +294,9 @@
  
 
 
-<a name="BLOCK-Block"></a>
+<a name="BLOCK-BlockService"></a>
 
-### Block
+### BlockService
 
 
 | Method Name | Request Type | Response Type | Description |

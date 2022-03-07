@@ -22,7 +22,7 @@
     - [Mode](#NODEADMIN-Mode)
     - [Status](#NODEADMIN-Status)
   
-    - [NodeAdmin](#NODEADMIN-NodeAdmin)
+    - [NodeAdminService](#NODEADMIN-NodeAdminService)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -280,9 +280,9 @@
  
 
 
-<a name="NODEADMIN-NodeAdmin"></a>
+<a name="NODEADMIN-NodeAdminService"></a>
 
-### NodeAdmin
+### NodeAdminService
 
 
 | Method Name | Request Type | Response Type | Description |

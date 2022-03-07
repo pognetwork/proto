@@ -7,7 +7,7 @@
     - [LoginReply](#NODEUSER-LoginReply)
     - [LoginRequest](#NODEUSER-LoginRequest)
   
-    - [NodeUser](#NODEUSER-NodeUser)
+    - [NodeUserService](#NODEUSER-NodeUserService)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -57,9 +57,9 @@
  
 
 
-<a name="NODEUSER-NodeUser"></a>
+<a name="NODEUSER-NodeUserService"></a>
 
-### NodeUser
+### NodeUserService
 
 
 | Method Name | Request Type | Response Type | Description |

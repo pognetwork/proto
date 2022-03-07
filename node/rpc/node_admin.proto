@@ -3,7 +3,7 @@ package NODEADMIN;
 
 import "node/api.proto";
 
-service NodeAdmin {
+service NodeAdminService {
   rpc GetMode(API.Empty) returns (GetModeReply);
   rpc SetMode(SetModeRequest) returns (API.Empty);
   rpc GetLogs(GetLogsRequest) returns (GetLogsReply);
