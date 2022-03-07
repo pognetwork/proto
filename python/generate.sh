@@ -1,6 +1,6 @@
 #!/bin/sh
 
-protoc --proto_path=../ --python_out=./ \
+protoc --proto_path=../ --python_out=./pog_proto \
     node/api.proto \
     node/p2p.proto \
     node/rpc/lattice.proto \
