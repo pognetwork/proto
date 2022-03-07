@@ -3,53 +3,47 @@
 
 ## Table of Contents
 
-- [node/rpc/node_wallet_manager.proto](#node/rpc/node_wallet_manager.proto)
-    - [AddWalletReply](#NODEWALLETMANAGER.AddWalletReply)
-    - [AddWalletRequest](#NODEWALLETMANAGER.AddWalletRequest)
-    - [DecryptMessageReply](#NODEWALLETMANAGER.DecryptMessageReply)
-    - [DecryptMessageRequest](#NODEWALLETMANAGER.DecryptMessageRequest)
-    - [Empty](#NODEWALLETMANAGER.Empty)
-    - [EncryptMessageReply](#NODEWALLETMANAGER.EncryptMessageReply)
-    - [EncryptMessageRequest](#NODEWALLETMANAGER.EncryptMessageRequest)
-    - [GetWalletReply](#NODEWALLETMANAGER.GetWalletReply)
-    - [GetWalletRequest](#NODEWALLETMANAGER.GetWalletRequest)
-    - [GetWalletsReply](#NODEWALLETMANAGER.GetWalletsReply)
-    - [RemoveWalletRequest](#NODEWALLETMANAGER.RemoveWalletRequest)
-    - [SignBlockReply](#NODEWALLETMANAGER.SignBlockReply)
-    - [SignBlockRequest](#NODEWALLETMANAGER.SignBlockRequest)
-    - [SignMessageReply](#NODEWALLETMANAGER.SignMessageReply)
-    - [SignMessageRequest](#NODEWALLETMANAGER.SignMessageRequest)
-    - [VerifySignatureRequest](#NODEWALLETMANAGER.VerifySignatureRequest)
+- [node/rpc/node_wallet_manager.proto](#node_rpc_node_wallet_manager-proto)
+    - [AddWalletReply](#NODEWALLETMANAGER-AddWalletReply)
+    - [AddWalletRequest](#NODEWALLETMANAGER-AddWalletRequest)
+    - [DecryptMessageReply](#NODEWALLETMANAGER-DecryptMessageReply)
+    - [DecryptMessageRequest](#NODEWALLETMANAGER-DecryptMessageRequest)
+    - [EncryptMessageReply](#NODEWALLETMANAGER-EncryptMessageReply)
+    - [EncryptMessageRequest](#NODEWALLETMANAGER-EncryptMessageRequest)
+    - [GetWalletReply](#NODEWALLETMANAGER-GetWalletReply)
+    - [GetWalletRequest](#NODEWALLETMANAGER-GetWalletRequest)
+    - [GetWalletsReply](#NODEWALLETMANAGER-GetWalletsReply)
+    - [RemoveWalletRequest](#NODEWALLETMANAGER-RemoveWalletRequest)
+    - [SignBlockReply](#NODEWALLETMANAGER-SignBlockReply)
+    - [SignBlockRequest](#NODEWALLETMANAGER-SignBlockRequest)
+    - [SignMessageReply](#NODEWALLETMANAGER-SignMessageReply)
+    - [SignMessageRequest](#NODEWALLETMANAGER-SignMessageRequest)
+    - [VerifySignatureRequest](#NODEWALLETMANAGER-VerifySignatureRequest)
   
-    - [NodeWalletManager](#NODEWALLETMANAGER.NodeWalletManager)
+    - [NodeWalletManager](#NODEWALLETMANAGER-NodeWalletManager)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="node/rpc/node_wallet_manager.proto"></a>
+<a name="node_rpc_node_wallet_manager-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## node/rpc/node_wallet_manager.proto
 
 
 
-<a name="NODEWALLETMANAGER.AddWalletReply"></a>
+<a name="NODEWALLETMANAGER-AddWalletReply"></a>
 
 ### AddWalletReply
 
 
 
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| account | [API.Account](#API.Account) |  |  |
 
 
 
 
-
-
-<a name="NODEWALLETMANAGER.AddWalletRequest"></a>
+<a name="NODEWALLETMANAGER-AddWalletRequest"></a>
 
 ### AddWalletRequest
 
@@ -65,7 +59,7 @@
 
 
 
-<a name="NODEWALLETMANAGER.DecryptMessageReply"></a>
+<a name="NODEWALLETMANAGER-DecryptMessageReply"></a>
 
 ### DecryptMessageReply
 
@@ -80,7 +74,7 @@
 
 
 
-<a name="NODEWALLETMANAGER.DecryptMessageRequest"></a>
+<a name="NODEWALLETMANAGER-DecryptMessageRequest"></a>
 
 ### DecryptMessageRequest
 
@@ -96,17 +90,7 @@
 
 
 
-<a name="NODEWALLETMANAGER.Empty"></a>
-
-### Empty
-
-
-
-
-
-
-
-<a name="NODEWALLETMANAGER.EncryptMessageReply"></a>
+<a name="NODEWALLETMANAGER-EncryptMessageReply"></a>
 
 ### EncryptMessageReply
 
@@ -121,7 +105,7 @@
 
 
 
-<a name="NODEWALLETMANAGER.EncryptMessageRequest"></a>
+<a name="NODEWALLETMANAGER-EncryptMessageRequest"></a>
 
 ### EncryptMessageRequest
 
@@ -137,22 +121,17 @@
 
 
 
-<a name="NODEWALLETMANAGER.GetWalletReply"></a>
+<a name="NODEWALLETMANAGER-GetWalletReply"></a>
 
 ### GetWalletReply
 
 
 
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| account | [API.Account](#API.Account) |  |  |
 
 
 
 
-
-
-<a name="NODEWALLETMANAGER.GetWalletRequest"></a>
+<a name="NODEWALLETMANAGER-GetWalletRequest"></a>
 
 ### GetWalletRequest
 
@@ -167,7 +146,7 @@
 
 
 
-<a name="NODEWALLETMANAGER.GetWalletsReply"></a>
+<a name="NODEWALLETMANAGER-GetWalletsReply"></a>
 
 ### GetWalletsReply
 
@@ -177,7 +156,7 @@
 
 
 
-<a name="NODEWALLETMANAGER.RemoveWalletRequest"></a>
+<a name="NODEWALLETMANAGER-RemoveWalletRequest"></a>
 
 ### RemoveWalletRequest
 
@@ -192,7 +171,7 @@
 
 
 
-<a name="NODEWALLETMANAGER.SignBlockReply"></a>
+<a name="NODEWALLETMANAGER-SignBlockReply"></a>
 
 ### SignBlockReply
 
@@ -200,14 +179,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| signed_block | [API.SignedBlock](#API.SignedBlock) |  |  |
+| block | [bytes](#bytes) |  |  |
 
 
 
 
 
 
-<a name="NODEWALLETMANAGER.SignBlockRequest"></a>
+<a name="NODEWALLETMANAGER-SignBlockRequest"></a>
 
 ### SignBlockRequest
 
@@ -215,15 +194,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| unsigned_block | [API.SignedBlock](#API.SignedBlock) |  |  |
-| address | [bytes](#bytes) |  |  |
+| unsigned_block | [API.Block](#API-Block) |  |  |
 
 
 
 
 
 
-<a name="NODEWALLETMANAGER.SignMessageReply"></a>
+<a name="NODEWALLETMANAGER-SignMessageReply"></a>
 
 ### SignMessageReply
 
@@ -238,7 +216,7 @@
 
 
 
-<a name="NODEWALLETMANAGER.SignMessageRequest"></a>
+<a name="NODEWALLETMANAGER-SignMessageRequest"></a>
 
 ### SignMessageRequest
 
@@ -254,7 +232,7 @@
 
 
 
-<a name="NODEWALLETMANAGER.VerifySignatureRequest"></a>
+<a name="NODEWALLETMANAGER-VerifySignatureRequest"></a>
 
 ### VerifySignatureRequest
 
@@ -276,22 +254,22 @@
  
 
 
-<a name="NODEWALLETMANAGER.NodeWalletManager"></a>
+<a name="NODEWALLETMANAGER-NodeWalletManager"></a>
 
 ### NodeWalletManager
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| GetWallets | [Empty](#NODEWALLETMANAGER.Empty) | [GetWalletsReply](#NODEWALLETMANAGER.GetWalletsReply) |  |
-| GetWallet | [GetWalletRequest](#NODEWALLETMANAGER.GetWalletRequest) | [GetWalletReply](#NODEWALLETMANAGER.GetWalletReply) |  |
-| AddWallet | [AddWalletRequest](#NODEWALLETMANAGER.AddWalletRequest) | [AddWalletReply](#NODEWALLETMANAGER.AddWalletReply) |  |
-| RemoveWallet | [RemoveWalletRequest](#NODEWALLETMANAGER.RemoveWalletRequest) | [Empty](#NODEWALLETMANAGER.Empty) |  |
-| SignMessage | [SignMessageRequest](#NODEWALLETMANAGER.SignMessageRequest) | [SignMessageReply](#NODEWALLETMANAGER.SignMessageReply) |  |
-| SignBlock | [SignBlockRequest](#NODEWALLETMANAGER.SignBlockRequest) | [SignBlockReply](#NODEWALLETMANAGER.SignBlockReply) |  |
-| VerifySignature | [VerifySignatureRequest](#NODEWALLETMANAGER.VerifySignatureRequest) | [Empty](#NODEWALLETMANAGER.Empty) |  |
-| EncryptMessage | [EncryptMessageRequest](#NODEWALLETMANAGER.EncryptMessageRequest) | [EncryptMessageReply](#NODEWALLETMANAGER.EncryptMessageReply) |  |
-| DecryptMessage | [DecryptMessageRequest](#NODEWALLETMANAGER.DecryptMessageRequest) | [DecryptMessageReply](#NODEWALLETMANAGER.DecryptMessageReply) |  |
+| GetWallets | [.API.Empty](#API-Empty) | [GetWalletsReply](#NODEWALLETMANAGER-GetWalletsReply) |  |
+| GetWallet | [GetWalletRequest](#NODEWALLETMANAGER-GetWalletRequest) | [GetWalletReply](#NODEWALLETMANAGER-GetWalletReply) |  |
+| AddWallet | [AddWalletRequest](#NODEWALLETMANAGER-AddWalletRequest) | [AddWalletReply](#NODEWALLETMANAGER-AddWalletReply) |  |
+| RemoveWallet | [RemoveWalletRequest](#NODEWALLETMANAGER-RemoveWalletRequest) | [.API.Empty](#API-Empty) |  |
+| SignMessage | [SignMessageRequest](#NODEWALLETMANAGER-SignMessageRequest) | [SignMessageReply](#NODEWALLETMANAGER-SignMessageReply) |  |
+| SignBlock | [SignBlockRequest](#NODEWALLETMANAGER-SignBlockRequest) | [SignBlockReply](#NODEWALLETMANAGER-SignBlockReply) |  |
+| VerifySignature | [VerifySignatureRequest](#NODEWALLETMANAGER-VerifySignatureRequest) | [.API.Empty](#API-Empty) |  |
+| EncryptMessage | [EncryptMessageRequest](#NODEWALLETMANAGER-EncryptMessageRequest) | [EncryptMessageReply](#NODEWALLETMANAGER-EncryptMessageReply) |  |
+| DecryptMessage | [DecryptMessageRequest](#NODEWALLETMANAGER-DecryptMessageRequest) | [DecryptMessageReply](#NODEWALLETMANAGER-DecryptMessageReply) |  |
 
  
 

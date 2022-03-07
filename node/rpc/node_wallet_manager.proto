@@ -4,27 +4,27 @@ package NODEWALLETMANAGER;
 import "node/api.proto";
 
 service NodeWalletManager {
-  rpc GetWallets(Empty) returns (GetWalletsReply);
+  rpc GetWallets(API.Empty) returns (GetWalletsReply);
   rpc GetWallet(GetWalletRequest) returns (GetWalletReply);
   rpc AddWallet(AddWalletRequest) returns (AddWalletReply);
-  rpc RemoveWallet(RemoveWalletRequest) returns (Empty);
+  rpc RemoveWallet(RemoveWalletRequest) returns (API.Empty);
   rpc SignMessage(SignMessageRequest) returns (SignMessageReply);
   rpc SignBlock(SignBlockRequest) returns (SignBlockReply);
-  rpc VerifySignature(VerifySignatureRequest) returns (Empty);
+  rpc VerifySignature(VerifySignatureRequest) returns (API.Empty);
   rpc EncryptMessage(EncryptMessageRequest) returns (EncryptMessageReply);
   rpc DecryptMessage(DecryptMessageRequest) returns (DecryptMessageReply);
 }
 
 message GetWalletsReply {};
+message GetWalletReply {};
+message AddWalletReply {};
 
 message GetWalletRequest { bytes address = 1; };
-message GetWalletReply { /*API.Account account = 1;*/ };
 
 message AddWalletRequest {
   string username = 1;
   string password = 2;
 };
-message AddWalletReply { /*API.Account account = 1;*/ };
 
 message RemoveWalletRequest { bytes address = 1; };
 
@@ -32,13 +32,10 @@ message SignMessageRequest {
   string unsigned_data = 1;
   bytes address = 2;
 };
-message SignMessageReply { string signed_data = 1; };
 
-message SignBlockRequest {
-  API.SignedBlock unsigned_block = 1;
-  bytes address = 2;
-};
-message SignBlockReply { API.SignedBlock signed_block = 1; };
+message SignMessageReply { string signed_data = 1; };
+message SignBlockRequest { API.Block unsigned_block = 1; };
+message SignBlockReply { bytes block = 1; };
 
 message VerifySignatureRequest {
   string data = 1;
@@ -55,6 +52,5 @@ message DecryptMessageRequest {
   string encrypted_message = 1;
   bytes address = 2;
 };
-message DecryptMessageReply { string decrypted_message = 1; };
 
-message Empty {};
+message DecryptMessageReply { string decrypted_message = 1; };

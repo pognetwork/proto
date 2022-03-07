@@ -1,28 +1,41 @@
 syntax = "proto3";
-package API;
+package P2P;
 
 import "node/api.proto";
 
-message PogRequest {
-  message Block {
-    API.SignedBlock block = 1;
-  }
-  message FinalVote {
-    uint32 finalVote = 1;
-  }
-  message Vote {
-    uint32 vote = 1;
-  }
+message RequestHeader {
+  // 64 bytes (for Ed25519, might be expanded later)
+  bytes signature = 1;
 
-  //bytes signature = 1;
-
-  oneof Data {
-    Block block = 2;
-    FinalVote finalVote = 3;
-    Vote vote = 4;
-  }
+  // 32 bytes (for Ed25519)
+  // node's public key
+  // this needs to be provided since account addresses are hashed public keys
+  bytes publicKey = 5;
 }
 
-message PogResponse {
-  //bytes signature = 1;  
+message Request {
+  message Forward {
+    RequestHeader requestHeader = 1;
+    Request request = 2;
+  }
+
+  message VoteProposal { API.RawBlock block = 1; }
+  message FinalVote { API.RawBlock block = 1; }
+
+  message Ping {
+    // 10 peers for network discovery
+    repeated bytes peers = 1;
+  }
+
+  API.SigType signatureType = 1;
+
+  // seconds of UTC time since Unix epoch
+  uint64 timestamp = 2;
+
+  oneof Data {
+    Ping ping = 4;
+    Forward forward = 5;
+    VoteProposal vote = 6;
+    FinalVote finalVote = 7;
+  }
 }

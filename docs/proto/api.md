@@ -3,65 +3,74 @@
 
 ## Table of Contents
 
-- [node/api.proto](#node/api.proto)
-    - [Account](#API.Account)
-    - [CallVoteRequest](#API.CallVoteRequest)
-    - [SignedBlock](#API.SignedBlock)
-    - [SignedBlock.BlockData](#API.SignedBlock.BlockData)
-    - [Transaction](#API.Transaction)
-    - [Transaction.TxClaim](#API.Transaction.TxClaim)
-    - [Transaction.TxDelegate](#API.Transaction.TxDelegate)
-    - [Transaction.TxOpen](#API.Transaction.TxOpen)
-    - [Transaction.TxSend](#API.Transaction.TxSend)
-    - [VoteResponse](#API.VoteResponse)
+- [node/api.proto](#node_api-proto)
+    - [Block](#API-Block)
+    - [BlockData](#API-BlockData)
+    - [BlockHeader](#API-BlockHeader)
+    - [Empty](#API-Empty)
+    - [RawBlock](#API-RawBlock)
+    - [Transaction](#API-Transaction)
+    - [Transaction.TxClaim](#API-Transaction-TxClaim)
+    - [Transaction.TxDelegate](#API-Transaction-TxDelegate)
+    - [Transaction.TxOpen](#API-Transaction-TxOpen)
+    - [Transaction.TxSend](#API-Transaction-TxSend)
   
-    - [AccountType](#API.AccountType)
-    - [BlockVersion](#API.BlockVersion)
-    - [SigType](#API.SigType)
+    - [AccountType](#API-AccountType)
+    - [BlockVersion](#API-BlockVersion)
+    - [SigType](#API-SigType)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="node/api.proto"></a>
+<a name="node_api-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
 ## node/api.proto
 
 
 
-<a name="API.Account"></a>
+<a name="API-Block"></a>
 
-### Account
+### Block
+Block is a struct with both header, data and raw data
+It should be used for things like api responses when querying blocks
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| header | [BlockHeader](#API-BlockHeader) |  |  |
+| data | [BlockData](#API-BlockData) |  |  |
+| block_id | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="API-BlockData"></a>
+
+### BlockData
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| type | [AccountType](#API.AccountType) |  |  |
-| address | [bytes](#bytes) |  |  |
-| publicKey | [bytes](#bytes) |  |  |
-| privateKey | [bytes](#bytes) |  |  |
-| votingPower | [uint32](#uint32) |  |  |
+| version | [BlockVersion](#API-BlockVersion) |  |  |
+| signatureType | [SigType](#API-SigType) |  |  |
+| balance | [uint64](#uint64) |  | the new account balance after applying all transactions |
+| height | [uint64](#uint64) |  | the block height (block index) |
+| previous | [bytes](#bytes) |  | previous block, empty if first block |
+| transactions | [Transaction](#API-Transaction) | repeated | transactions contained in a block - Can&#39;t contain duplicates - Can&#39;t contain more than 255 transactions - Orderd (as per protobuf specification) |
 
 
 
 
 
 
-<a name="API.CallVoteRequest"></a>
+<a name="API-BlockHeader"></a>
 
-### CallVoteRequest
-Calls for a vote on conflicting blocks (e.g when double spending)
-
-
-
-
-
-
-<a name="API.SignedBlock"></a>
-
-### SignedBlock
+### BlockHeader
 
 
 
@@ -70,34 +79,41 @@ Calls for a vote on conflicting blocks (e.g when double spending)
 | signature | [bytes](#bytes) |  | 64 bytes (for Ed25519, might be expanded later) |
 | publicKey | [bytes](#bytes) |  | 32 bytes (for Ed25519) account&#39;s public key this needs to be provided since account addresses are hashed public keys |
 | timestamp | [uint64](#uint64) |  | seconds of UTC time since Unix epoch will be set by the first node receiving the transaction |
-| data | [SignedBlock.BlockData](#API.SignedBlock.BlockData) |  | data is the field that will be signed and hashed to generate the values above |
 
 
 
 
 
 
-<a name="API.SignedBlock.BlockData"></a>
+<a name="API-Empty"></a>
 
-### SignedBlock.BlockData
+### Empty
 
+
+
+
+
+
+
+<a name="API-RawBlock"></a>
+
+### RawBlock
+A minimal version of Block
+Should be used in cases where blocks need to be verified like in p2p
+communication or when re-building/verifieng the entire chain
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| version | [BlockVersion](#API.BlockVersion) |  |  |
-| signatureType | [SigType](#API.SigType) |  |  |
-| balance | [uint64](#uint64) |  | the new account balance after applying all transactions |
-| height | [uint64](#uint64) |  | the block height (block index) |
-| previous | [bytes](#bytes) |  | previous block, empty if first block |
-| transactions | [Transaction](#API.Transaction) | repeated | transactions contained in a block - Can&#39;t contain duplicates - Can&#39;t contain more than 255 transactions |
+| header | [BlockHeader](#API-BlockHeader) |  |  |
+| data | [bytes](#bytes) |  |  |
 
 
 
 
 
 
-<a name="API.Transaction"></a>
+<a name="API-Transaction"></a>
 
 ### Transaction
 
@@ -105,17 +121,17 @@ Calls for a vote on conflicting blocks (e.g when double spending)
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| txOpen | [Transaction.TxOpen](#API.Transaction.TxOpen) |  |  |
-| txSend | [Transaction.TxSend](#API.Transaction.TxSend) |  |  |
-| txCollect | [Transaction.TxClaim](#API.Transaction.TxClaim) |  |  |
-| txDelegate | [Transaction.TxDelegate](#API.Transaction.TxDelegate) |  |  |
+| txOpen | [Transaction.TxOpen](#API-Transaction-TxOpen) |  |  |
+| txSend | [Transaction.TxSend](#API-Transaction-TxSend) |  |  |
+| txClaim | [Transaction.TxClaim](#API-Transaction-TxClaim) |  |  |
+| txDelegate | [Transaction.TxDelegate](#API-Transaction-TxDelegate) |  |  |
 
 
 
 
 
 
-<a name="API.Transaction.TxClaim"></a>
+<a name="API-Transaction-TxClaim"></a>
 
 ### Transaction.TxClaim
 Block Claim collects a transaction from another account&#39;s block
@@ -123,14 +139,14 @@ Block Claim collects a transaction from another account&#39;s block
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| transactionID | [bytes](#bytes) |  |  |
+| sendTransactionID | [bytes](#bytes) |  |  |
 
 
 
 
 
 
-<a name="API.Transaction.TxDelegate"></a>
+<a name="API-Transaction-TxDelegate"></a>
 
 ### Transaction.TxDelegate
 Block delegate assigns a new representative to an account
@@ -145,7 +161,7 @@ Block delegate assigns a new representative to an account
 
 
 
-<a name="API.Transaction.TxOpen"></a>
+<a name="API-Transaction-TxOpen"></a>
 
 ### Transaction.TxOpen
 Initialize a new Account
@@ -153,14 +169,14 @@ Initialize a new Account
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| type | [AccountType](#API.AccountType) |  |  |
+| type | [AccountType](#API-AccountType) |  |  |
 
 
 
 
 
 
-<a name="API.Transaction.TxSend"></a>
+<a name="API-Transaction-TxSend"></a>
 
 ### Transaction.TxSend
 Block send is a send transaction in the sender&#39;s account
@@ -176,20 +192,10 @@ Block send is a send transaction in the sender&#39;s account
 
 
 
-
-<a name="API.VoteResponse"></a>
-
-### VoteResponse
-Vote casts a vote on which of multiple conflicting block will be chosen
-
-
-
-
-
  
 
 
-<a name="API.AccountType"></a>
+<a name="API-AccountType"></a>
 
 ### AccountType
 should be represented as u8
@@ -201,7 +207,7 @@ should be represented as u8
 
 
 
-<a name="API.BlockVersion"></a>
+<a name="API-BlockVersion"></a>
 
 ### BlockVersion
 should be represented as u8
@@ -212,7 +218,7 @@ should be represented as u8
 
 
 
-<a name="API.SigType"></a>
+<a name="API-SigType"></a>
 
 ### SigType
 should be represented as u8

@@ -52,13 +52,13 @@ message VotingPowerReply { uint32 power = 1; }
 
 message BlockByIDRequest { bytes hash = 1; }
 
-message BlockByIDReply { API.SignedBlock block = 1; }
+message BlockByIDReply { API.Block block = 1; }
 
 message DelegateRequest { bytes address = 1; }
 
 message DelegateReply { bytes delegateAddress = 1; }
 
-message PendingBlockReply { repeated API.SignedBlock blocks = 1; }
+message PendingBlockReply { repeated API.Block blocks = 1; }
 
 message UnacknowledgedTXReply { repeated API.Transaction transactions = 1; }
 
