@@ -1,6 +1,6 @@
 [package]
 authors = ["The POG Contributors <contact@pog.network>"]
-build = "rust/build.rs"
+build = "build.rs"
 edition = "2018"
 name = "pog-proto"
 version = "0.1.0"
@@ -15,4 +15,4 @@ tonic = "0.6"
 tonic-build = "0.6"
 
 [lib]
-path = "rust/lib.rs"
+path = "lib.rs"
