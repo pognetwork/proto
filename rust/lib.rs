@@ -107,8 +107,8 @@ struct DoubleError;
 #[path = "generated/p2p.rs"]
 pub mod p2p;
 
-#[path = "generated/block.rs"]
-mod rpc_block;
+#[path = "generated/lattice.rs"]
+mod rpc_lattice;
 
 #[path = "generated/nodewalletmanager.rs"]
 mod rpc_node_wallet_manager;
@@ -120,8 +120,8 @@ mod rpc_node_admin;
 mod rpc_node_user;
 
 pub mod rpc {
-    pub mod block {
-        pub use crate::rpc_block::*;
+    pub mod lattice {
+        pub use crate::rpc_lattice::*;
     }
 
     pub mod node_admin {
