@@ -3,6 +3,36 @@ package P2P;
 
 import "node/api.proto";
 
+message ResponseHeader {
+
+  // 64 bytes (for Ed25519, might be expanded later)
+  bytes signature = 1;
+  // 32 bytes (for Ed25519)
+  // node's public key
+  // this needs to be provided since account addresses are hashed public keys
+  bytes publicKey = 5;
+}
+
+message Peer { bytes ip = 1; }
+
+enum Failure { MalformedRequest = 1; }
+
+message ResponseData {
+  message Success {}
+  message Failure { Failure failure = 1; }
+
+  message Pong { repeated Peer peers = 1; }
+
+  // seconds of UTC time since Unix epoch
+  uint64 timestamp = 2;
+
+  oneof data {
+    Success success = 3;
+    Failure failure = 4;
+    Pong pong = 5;
+  }
+}
+
 message RequestHeader {
   // 64 bytes (for Ed25519, might be expanded later)
   bytes signature = 1;
@@ -13,10 +43,10 @@ message RequestHeader {
   bytes publicKey = 5;
 }
 
-message Request {
+message RequestData {
   message Forward {
     RequestHeader requestHeader = 1;
-    Request request = 2;
+    RequestData request = 2;
   }
 
   message VoteProposal { API.RawBlock block = 1; }
@@ -32,7 +62,7 @@ message Request {
   // seconds of UTC time since Unix epoch
   uint64 timestamp = 2;
 
-  oneof Data {
+  oneof data {
     Ping ping = 4;
     Forward forward = 5;
     VoteProposal vote = 6;
