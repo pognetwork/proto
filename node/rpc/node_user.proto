@@ -1,7 +1,7 @@
 syntax = "proto3";
 package NODEUSER;
 
-service NodeUserService { rpc Login(LoginRequest) returns (LoginReply); }
+service NodeUser { rpc Login(LoginRequest) returns (LoginReply); }
 
 message LoginRequest {
   string username = 1;

@@ -1,9 +1,9 @@
 syntax = "proto3";
-package BLOCK;
+package LATTICE;
 
 import "node/api.proto";
 
-service BlockService {
+service Lattice {
   // GetBalance accepts BalanceRequests and returns BalanceReplies
   rpc GetBalance(BalanceRequest) returns (BalanceReply);
   // GetNextBlockHeight uses an address to get the latest block index to then

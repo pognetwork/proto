@@ -6,7 +6,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             &[
                 "./node/api.proto",
                 "./node/p2p.proto",
-                "./node/rpc/block.proto",
+                "./node/rpc/lattice.proto",
                 "./node/rpc/node_admin.proto",
                 "./node/rpc/node_wallet_manager.proto",
                 "./node/rpc/node_user.proto",

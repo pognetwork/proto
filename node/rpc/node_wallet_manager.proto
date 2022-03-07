@@ -3,7 +3,7 @@ package NODEWALLETMANAGER;
 
 import "node/api.proto";
 
-service NodeWalletManagerService {
+service NodeWalletManager {
   rpc GetWallets(API.Empty) returns (GetWalletsReply);
   rpc GetWallet(GetWalletRequest) returns (GetWalletReply);
   rpc AddWallet(AddWalletRequest) returns (AddWalletReply);

@@ -1,7 +1,7 @@
 export const rpc = [
   "rpc/node_admin.proto",
   "rpc/node_wallet_manager.proto",
-  "rpc/block.proto",
+  "rpc/lattice.proto",
   "rpc/node_user.proto",
 ];
 
