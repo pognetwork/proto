@@ -17,7 +17,7 @@ message Peer {
   bytes publicKey = 1; 
   uint64 votingPower = 2;
   bytes ip = 3;
-  Duration lastPing = 4;
+  // Duration lastPing = 4;
 }
 
 enum Failure {
