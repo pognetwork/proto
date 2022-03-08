@@ -13,7 +13,12 @@ message ResponseHeader {
   bytes publicKey = 5;
 }
 
-message Peer { bytes ip = 1; }
+message Peer { 
+  bytes publicKey = 1; 
+  uint64 votingPower = 2;
+  bytes ip = 3;
+  Duration lastPing = 4;
+}
 
 enum Failure {
   MalformedRequest = 0;
