@@ -48,7 +48,7 @@ message VotingPowerRequest {
   bool getActive = 2;
 }
 
-message VotingPowerReply { uint32 power = 1; }
+message VotingPowerReply { uint64 power = 1; }
 
 message BlockByIDRequest { bytes hash = 1; }
 
