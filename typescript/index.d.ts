@@ -1,1 +1,1 @@
-export * from "./node/api.d.ts";
+export * from "./node/api";
