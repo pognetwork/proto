@@ -21,11 +21,12 @@ jobs:
       - name: Install Protoc
         uses: arduino/setup-protoc@v1
 
-      - run: |
+      - name: Build & publish
+        run: |
           cd typescript
           npm install
           npm run build
           npm run bump
-          npm publish
+          npm publish --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
