@@ -11,8 +11,10 @@
   "type": "module",
   "exports": {
     ".": "./index.js",
+    "./node/": "./node/",
     "./node/api": "./node/api.js",
-    "./node/rpc/block": "./node/rpc/block.js",
+    "./node/rpc/": "./node/rpc/",
+    "./node/rpc/lattice": "./node/rpc/lattice.js",
     "./node/rpc/node_admin": "./node/rpc/node_admin.js",
     "./node/rpc/node_user": "./node/rpc/node_user.js",
     "./node/rpc/node_wallet_manager": "./node/rpc/node_wallet_manager.js"
