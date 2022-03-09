@@ -13,13 +13,6 @@ message ResponseHeader {
   bytes publicKey = 5;
 }
 
-message Peer { 
-  bytes publicKey = 1; 
-  uint64 votingPower = 2;
-  bytes ip = 3;
-  // Duration lastPing = 4;
-}
-
 enum Failure {
   MalformedRequest = 0;
   InvalidSignature = 1;
@@ -28,7 +21,7 @@ enum Failure {
 
 message ResponseBody {
   message Success {}
-  message Pong { repeated Peer peers = 1; }
+  message Pong { repeated bytes peers = 1; }
 
   API.SigType signatureType = 1;
 
@@ -58,7 +51,7 @@ message RequestBody {
   }
   message VoteProposal { API.RawBlock block = 1; }
   message FinalVote { API.RawBlock block = 1; }
-  message Ping { repeated Peer peers = 1; }
+  message Ping { repeated bytes peers = 1; }
 
   API.SigType signatureType = 1;
 

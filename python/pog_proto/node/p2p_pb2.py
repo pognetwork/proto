@@ -16,7 +16,7 @@ _sym_db = _symbol_database.Default()
 from node import api_pb2 as node_dot_api__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0enode/p2p.proto\x12\x03P2P\x1a\x0enode/api.proto\"6\n\x0eResponseHeader\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x11\n\tpublicKey\x18\x05 \x01(\x0c\"\x12\n\x04Peer\x12\n\n\x02ip\x18\x01 \x01(\x0c\"\xf2\x01\n\x0cResponseBody\x12#\n\rsignatureType\x18\x01 \x01(\x0e\x32\x0c.API.SigType\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12,\n\x07success\x18\x03 \x01(\x0b\x32\x19.P2P.ResponseBody.SuccessH\x00\x12\x1f\n\x07\x66\x61ilure\x18\x04 \x01(\x0e\x32\x0c.P2P.FailureH\x00\x12&\n\x04pong\x18\x05 \x01(\x0b\x32\x16.P2P.ResponseBody.PongH\x00\x1a\t\n\x07Success\x1a \n\x04Pong\x12\x18\n\x05peers\x18\x01 \x03(\x0b\x32\t.P2P.PeerB\x06\n\x04\x64\x61ta\"5\n\rRequestHeader\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x11\n\tpublicKey\x18\x05 \x01(\x0c\"\xdd\x03\n\x0bRequestBody\x12#\n\rsignatureType\x18\x01 \x01(\x0e\x32\x0c.API.SigType\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12%\n\x04ping\x18\x04 \x01(\x0b\x32\x15.P2P.RequestBody.PingH\x00\x12+\n\x07\x66orward\x18\x05 \x01(\x0b\x32\x18.P2P.RequestBody.ForwardH\x00\x12\x35\n\x0cvoteProposal\x18\x06 \x01(\x0b\x32\x1d.P2P.RequestBody.VoteProposalH\x00\x12/\n\tfinalVote\x18\x07 \x01(\x0b\x32\x1a.P2P.RequestBody.FinalVoteH\x00\x1aW\n\x07\x46orward\x12)\n\rrequestHeader\x18\x01 \x01(\x0b\x32\x12.P2P.RequestHeader\x12!\n\x07request\x18\x02 \x01(\x0b\x32\x10.P2P.RequestBody\x1a,\n\x0cVoteProposal\x12\x1c\n\x05\x62lock\x18\x01 \x01(\x0b\x32\r.API.RawBlock\x1a)\n\tFinalVote\x12\x1c\n\x05\x62lock\x18\x01 \x01(\x0b\x32\r.API.RawBlock\x1a \n\x04Ping\x12\x18\n\x05peers\x18\x01 \x03(\x0b\x32\t.P2P.PeerB\x06\n\x04\x64\x61ta*H\n\x07\x46\x61ilure\x12\x14\n\x10MalformedRequest\x10\x00\x12\x14\n\x10InvalidSignature\x10\x01\x12\x11\n\rInternalError\x10\x02\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0enode/p2p.proto\x12\x03P2P\x1a\x0enode/api.proto\"6\n\x0eResponseHeader\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x11\n\tpublicKey\x18\x05 \x01(\x0c\"\xe7\x01\n\x0cResponseBody\x12#\n\rsignatureType\x18\x01 \x01(\x0e\x32\x0c.API.SigType\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12,\n\x07success\x18\x03 \x01(\x0b\x32\x19.P2P.ResponseBody.SuccessH\x00\x12\x1f\n\x07\x66\x61ilure\x18\x04 \x01(\x0e\x32\x0c.P2P.FailureH\x00\x12&\n\x04pong\x18\x05 \x01(\x0b\x32\x16.P2P.ResponseBody.PongH\x00\x1a\t\n\x07Success\x1a\x15\n\x04Pong\x12\r\n\x05peers\x18\x01 \x03(\x0c\x42\x06\n\x04\x64\x61ta\"5\n\rRequestHeader\x12\x11\n\tsignature\x18\x01 \x01(\x0c\x12\x11\n\tpublicKey\x18\x05 \x01(\x0c\"\xd2\x03\n\x0bRequestBody\x12#\n\rsignatureType\x18\x01 \x01(\x0e\x32\x0c.API.SigType\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12%\n\x04ping\x18\x04 \x01(\x0b\x32\x15.P2P.RequestBody.PingH\x00\x12+\n\x07\x66orward\x18\x05 \x01(\x0b\x32\x18.P2P.RequestBody.ForwardH\x00\x12\x35\n\x0cvoteProposal\x18\x06 \x01(\x0b\x32\x1d.P2P.RequestBody.VoteProposalH\x00\x12/\n\tfinalVote\x18\x07 \x01(\x0b\x32\x1a.P2P.RequestBody.FinalVoteH\x00\x1aW\n\x07\x46orward\x12)\n\rrequestHeader\x18\x01 \x01(\x0b\x32\x12.P2P.RequestHeader\x12!\n\x07request\x18\x02 \x01(\x0b\x32\x10.P2P.RequestBody\x1a,\n\x0cVoteProposal\x12\x1c\n\x05\x62lock\x18\x01 \x01(\x0b\x32\r.API.RawBlock\x1a)\n\tFinalVote\x12\x1c\n\x05\x62lock\x18\x01 \x01(\x0b\x32\r.API.RawBlock\x1a\x15\n\x04Ping\x12\r\n\x05peers\x18\x01 \x03(\x0c\x42\x06\n\x04\x64\x61ta*H\n\x07\x46\x61ilure\x12\x14\n\x10MalformedRequest\x10\x00\x12\x14\n\x10InvalidSignature\x10\x01\x12\x11\n\rInternalError\x10\x02\x62\x06proto3')
 
 _FAILURE = DESCRIPTOR.enum_types_by_name['Failure']
 Failure = enum_type_wrapper.EnumTypeWrapper(_FAILURE)
@@ -26,7 +26,6 @@ InternalError = 2
 
 
 _RESPONSEHEADER = DESCRIPTOR.message_types_by_name['ResponseHeader']
-_PEER = DESCRIPTOR.message_types_by_name['Peer']
 _RESPONSEBODY = DESCRIPTOR.message_types_by_name['ResponseBody']
 _RESPONSEBODY_SUCCESS = _RESPONSEBODY.nested_types_by_name['Success']
 _RESPONSEBODY_PONG = _RESPONSEBODY.nested_types_by_name['Pong']
@@ -42,13 +41,6 @@ ResponseHeader = _reflection.GeneratedProtocolMessageType('ResponseHeader', (_me
   # @@protoc_insertion_point(class_scope:P2P.ResponseHeader)
   })
 _sym_db.RegisterMessage(ResponseHeader)
-
-Peer = _reflection.GeneratedProtocolMessageType('Peer', (_message.Message,), {
-  'DESCRIPTOR' : _PEER,
-  '__module__' : 'node.p2p_pb2'
-  # @@protoc_insertion_point(class_scope:P2P.Peer)
-  })
-_sym_db.RegisterMessage(Peer)
 
 ResponseBody = _reflection.GeneratedProtocolMessageType('ResponseBody', (_message.Message,), {
 
@@ -122,28 +114,26 @@ _sym_db.RegisterMessage(RequestBody.Ping)
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _FAILURE._serialized_start=895
-  _FAILURE._serialized_end=967
+  _FAILURE._serialized_start=853
+  _FAILURE._serialized_end=925
   _RESPONSEHEADER._serialized_start=39
   _RESPONSEHEADER._serialized_end=93
-  _PEER._serialized_start=95
-  _PEER._serialized_end=113
-  _RESPONSEBODY._serialized_start=116
-  _RESPONSEBODY._serialized_end=358
-  _RESPONSEBODY_SUCCESS._serialized_start=307
-  _RESPONSEBODY_SUCCESS._serialized_end=316
-  _RESPONSEBODY_PONG._serialized_start=318
-  _RESPONSEBODY_PONG._serialized_end=350
-  _REQUESTHEADER._serialized_start=360
-  _REQUESTHEADER._serialized_end=413
-  _REQUESTBODY._serialized_start=416
-  _REQUESTBODY._serialized_end=893
-  _REQUESTBODY_FORWARD._serialized_start=675
-  _REQUESTBODY_FORWARD._serialized_end=762
-  _REQUESTBODY_VOTEPROPOSAL._serialized_start=764
-  _REQUESTBODY_VOTEPROPOSAL._serialized_end=808
-  _REQUESTBODY_FINALVOTE._serialized_start=810
-  _REQUESTBODY_FINALVOTE._serialized_end=851
-  _REQUESTBODY_PING._serialized_start=853
-  _REQUESTBODY_PING._serialized_end=885
+  _RESPONSEBODY._serialized_start=96
+  _RESPONSEBODY._serialized_end=327
+  _RESPONSEBODY_SUCCESS._serialized_start=287
+  _RESPONSEBODY_SUCCESS._serialized_end=296
+  _RESPONSEBODY_PONG._serialized_start=298
+  _RESPONSEBODY_PONG._serialized_end=319
+  _REQUESTHEADER._serialized_start=329
+  _REQUESTHEADER._serialized_end=382
+  _REQUESTBODY._serialized_start=385
+  _REQUESTBODY._serialized_end=851
+  _REQUESTBODY_FORWARD._serialized_start=644
+  _REQUESTBODY_FORWARD._serialized_end=731
+  _REQUESTBODY_VOTEPROPOSAL._serialized_start=733
+  _REQUESTBODY_VOTEPROPOSAL._serialized_end=777
+  _REQUESTBODY_FINALVOTE._serialized_start=779
+  _REQUESTBODY_FINALVOTE._serialized_end=820
+  _REQUESTBODY_PING._serialized_start=822
+  _REQUESTBODY_PING._serialized_end=843
 # @@protoc_insertion_point(module_scope)

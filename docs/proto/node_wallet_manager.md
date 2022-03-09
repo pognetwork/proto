@@ -20,7 +20,7 @@
     - [SignMessageRequest](#NODEWALLETMANAGER-SignMessageRequest)
     - [VerifySignatureRequest](#NODEWALLETMANAGER-VerifySignatureRequest)
   
-    - [NodeWalletManagerService](#NODEWALLETMANAGER-NodeWalletManagerService)
+    - [NodeWalletManager](#NODEWALLETMANAGER-NodeWalletManager)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -254,9 +254,9 @@
  
 
 
-<a name="NODEWALLETMANAGER-NodeWalletManagerService"></a>
+<a name="NODEWALLETMANAGER-NodeWalletManager"></a>
 
-### NodeWalletManagerService
+### NodeWalletManager
 
 
 | Method Name | Request Type | Response Type | Description |
