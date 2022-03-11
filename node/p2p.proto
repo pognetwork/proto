@@ -49,8 +49,14 @@ message RequestBody {
     RequestHeader requestHeader = 1;
     RequestBody request = 2;
   }
-  message VoteProposal { API.RawBlock block = 1; }
-  message FinalVote { API.RawBlock block = 1; }
+  message VoteProposal { 
+    API.RawBlock block = 1;
+    uint64 importance = 2;
+  }
+  message FinalVote { 
+    API.RawBlock block = 1; 
+    uint64 importance = 2;
+  }
   message Ping { repeated bytes peers = 1; }
 
   API.SigType signatureType = 1;
