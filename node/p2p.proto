@@ -51,11 +51,11 @@ message RequestBody {
   }
   message VoteProposal { 
     API.RawBlock block = 1;
-    uint64 importance = 2;
+    uint64 vote = 2;
   }
   message FinalVote { 
     API.RawBlock block = 1; 
-    uint64 importance = 2;
+    uint64 vote = 2;
   }
   message Ping { repeated bytes peers = 1; }
 
