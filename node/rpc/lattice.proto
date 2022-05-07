@@ -19,12 +19,26 @@ service Lattice {
   rpc GetPendingBlocks(Empty) returns (PendingBlockReply);
   // GetUnacknowledgedTX gets a number of how many transactions are
   // unacknowledged
+  rpc GetBlocks(GetBlocksRequest) returns (GetBlocksReply);
+  // GetUnacknowledgedTX gets a number of how many transactions are
   rpc GetUnacknowledgedTX(Empty) returns (UnacknowledgedTXReply);
   // GetTXByID uses a transaction ID to get a transaction
   rpc GetTXByID(TXByIDRequest) returns (TXByIDReply);
   // GetTXByIndex uses an index for inside a block to return a transaction
   rpc GetTXByIndex(TXByIndexRequest) returns (TXByIndexReply);
 }
+
+enum sortBy {
+  data = 0;
+  data_desc = 1;
+}
+
+message GetBlocksRequest {
+  uint32 limit = 1;
+  uint32 offset = 2;
+  sortBy sortBy = 3;
+}
+message GetBlocksReply {}
 
 message BalanceRequest {
   // Balance Request takes the address for query

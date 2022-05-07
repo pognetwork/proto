@@ -13,6 +13,8 @@
     - [DelegateReply](#LATTICE-DelegateReply)
     - [DelegateRequest](#LATTICE-DelegateRequest)
     - [Empty](#LATTICE-Empty)
+    - [GetBlocksReply](#LATTICE-GetBlocksReply)
+    - [GetBlocksRequest](#LATTICE-GetBlocksRequest)
     - [PendingBlockReply](#LATTICE-PendingBlockReply)
     - [TXByIDReply](#LATTICE-TXByIDReply)
     - [TXByIDRequest](#LATTICE-TXByIDRequest)
@@ -21,6 +23,8 @@
     - [UnacknowledgedTXReply](#LATTICE-UnacknowledgedTXReply)
     - [VotingPowerReply](#LATTICE-VotingPowerReply)
     - [VotingPowerRequest](#LATTICE-VotingPowerRequest)
+  
+    - [sortBy](#LATTICE-sortBy)
   
     - [Lattice](#LATTICE-Lattice)
   
@@ -166,6 +170,33 @@
 
 
 
+<a name="LATTICE-GetBlocksReply"></a>
+
+### GetBlocksReply
+
+
+
+
+
+
+
+<a name="LATTICE-GetBlocksRequest"></a>
+
+### GetBlocksRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| limit | [uint32](#uint32) |  |  |
+| offset | [uint32](#uint32) |  |  |
+| sortBy | [sortBy](#LATTICE-sortBy) |  |  |
+
+
+
+
+
+
 <a name="LATTICE-PendingBlockReply"></a>
 
 ### PendingBlockReply
@@ -289,6 +320,18 @@
 
  
 
+
+<a name="LATTICE-sortBy"></a>
+
+### sortBy
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| data | 0 |  |
+| data_desc | 1 |  |
+
+
  
 
  
@@ -307,7 +350,8 @@
 | GetBlockByID | [BlockByIDRequest](#LATTICE-BlockByIDRequest) | [BlockByIDReply](#LATTICE-BlockByIDReply) | GetBlockByID uses the hash of a block to get the data |
 | GetDelegate | [DelegateRequest](#LATTICE-DelegateRequest) | [DelegateReply](#LATTICE-DelegateReply) | GetDelegate uses an account address to return a address of the delegate |
 | GetPendingBlocks | [Empty](#LATTICE-Empty) | [PendingBlockReply](#LATTICE-PendingBlockReply) | GetPendingBlocks gets all blocks that havent been processed |
-| GetUnacknowledgedTX | [Empty](#LATTICE-Empty) | [UnacknowledgedTXReply](#LATTICE-UnacknowledgedTXReply) | GetUnacknowledgedTX gets a number of how many transactions are unacknowledged |
+| GetBlocks | [GetBlocksRequest](#LATTICE-GetBlocksRequest) | [GetBlocksReply](#LATTICE-GetBlocksReply) | GetUnacknowledgedTX gets a number of how many transactions are unacknowledged |
+| GetUnacknowledgedTX | [Empty](#LATTICE-Empty) | [UnacknowledgedTXReply](#LATTICE-UnacknowledgedTXReply) | GetUnacknowledgedTX gets a number of how many transactions are |
 | GetTXByID | [TXByIDRequest](#LATTICE-TXByIDRequest) | [TXByIDReply](#LATTICE-TXByIDReply) | GetTXByID uses a transaction ID to get a transaction |
 | GetTXByIndex | [TXByIndexRequest](#LATTICE-TXByIndexRequest) | [TXByIndexReply](#LATTICE-TXByIndexReply) | GetTXByIndex uses an index for inside a block to return a transaction |
 
