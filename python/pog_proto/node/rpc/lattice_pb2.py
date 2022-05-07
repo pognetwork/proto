@@ -14,53 +14,53 @@ _sym_db = _symbol_database.Default()
 from node import api_pb2 as node_dot_api__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16node/rpc/lattice.proto\x12\x07LATTICE\x1a\x0enode/api.proto\"R\n\x10GetBlocksRequest\x12\r\n\x05limit\x18\x01 \x01(\r\x12\x0e\n\x06offset\x18\x02 \x01(\r\x12\x1f\n\x06sortBy\x18\x03 \x01(\x0e\x32\x0f.LATTICE.sortBy\"\x10\n\x0eGetBlocksReply\"!\n\x0e\x42\x61lanceRequest\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\"\x1f\n\x0c\x42\x61lanceReply\x12\x0f\n\x07\x62\x61lance\x18\x01 \x01(\x04\"6\n\x12\x42lockHeightRequest\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\x12\x0f\n\x07getNext\x18\x02 \x01(\x08\"&\n\x10\x42lockHeightReply\x12\x12\n\nnextHeight\x18\x01 \x01(\x04\"8\n\x12VotingPowerRequest\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\x12\x11\n\tgetActive\x18\x02 \x01(\x08\"!\n\x10VotingPowerReply\x12\r\n\x05power\x18\x01 \x01(\x04\" \n\x10\x42lockByIDRequest\x12\x0c\n\x04hash\x18\x01 \x01(\x0c\"+\n\x0e\x42lockByIDReply\x12\x19\n\x05\x62lock\x18\x01 \x01(\x0b\x32\n.API.Block\"\"\n\x0f\x44\x65legateRequest\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\"(\n\rDelegateReply\x12\x17\n\x0f\x64\x65legateAddress\x18\x01 \x01(\x0c\"/\n\x11PendingBlockReply\x12\x1a\n\x06\x62locks\x18\x01 \x03(\x0b\x32\n.API.Block\"?\n\x15UnacknowledgedTXReply\x12&\n\x0ctransactions\x18\x01 \x03(\x0b\x32\x10.API.Transaction\"&\n\rTXByIDRequest\x12\x15\n\rtransactionID\x18\x01 \x01(\x0c\"4\n\x0bTXByIDReply\x12%\n\x0btransaction\x18\x01 \x01(\x0b\x32\x10.API.Transaction\"1\n\x10TXByIndexRequest\x12\x0e\n\x06height\x18\x01 \x01(\x04\x12\r\n\x05index\x18\x02 \x01(\x04\"7\n\x0eTXByIndexReply\x12%\n\x0btransaction\x18\x01 \x01(\x0b\x32\x10.API.Transaction\"\x07\n\x05\x45mpty*!\n\x06sortBy\x12\x08\n\x04\x64\x61ta\x10\x00\x12\r\n\tdata_desc\x10\x01\x32\xa7\x05\n\x07Lattice\x12<\n\nGetBalance\x12\x17.LATTICE.BalanceRequest\x1a\x15.LATTICE.BalanceReply\x12H\n\x0eGetBlockHeight\x12\x1b.LATTICE.BlockHeightRequest\x1a\x19.LATTICE.BlockHeightReply\x12H\n\x0eGetVotingPower\x12\x1b.LATTICE.VotingPowerRequest\x1a\x19.LATTICE.VotingPowerReply\x12\x42\n\x0cGetBlockByID\x12\x19.LATTICE.BlockByIDRequest\x1a\x17.LATTICE.BlockByIDReply\x12?\n\x0bGetDelegate\x12\x18.LATTICE.DelegateRequest\x1a\x16.LATTICE.DelegateReply\x12>\n\x10GetPendingBlocks\x12\x0e.LATTICE.Empty\x1a\x1a.LATTICE.PendingBlockReply\x12?\n\tGetBlocks\x12\x19.LATTICE.GetBlocksRequest\x1a\x17.LATTICE.GetBlocksReply\x12\x45\n\x13GetUnacknowledgedTX\x12\x0e.LATTICE.Empty\x1a\x1e.LATTICE.UnacknowledgedTXReply\x12\x39\n\tGetTXByID\x12\x16.LATTICE.TXByIDRequest\x1a\x14.LATTICE.TXByIDReply\x12\x42\n\x0cGetTXByIndex\x12\x19.LATTICE.TXByIndexRequest\x1a\x17.LATTICE.TXByIndexReplyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16node/rpc/lattice.proto\x12\x07LATTICE\x1a\x0enode/api.proto\"R\n\x10GetBlocksRequest\x12\r\n\x05limit\x18\x01 \x01(\r\x12\x0e\n\x06offset\x18\x02 \x01(\r\x12\x1f\n\x06sortBy\x18\x03 \x01(\x0e\x32\x0f.LATTICE.sortBy\",\n\x0eGetBlocksReply\x12\x1a\n\x06\x62locks\x18\x01 \x03(\x0b\x32\n.API.Block\"!\n\x0e\x42\x61lanceRequest\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\"\x1f\n\x0c\x42\x61lanceReply\x12\x0f\n\x07\x62\x61lance\x18\x01 \x01(\x04\"6\n\x12\x42lockHeightRequest\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\x12\x0f\n\x07getNext\x18\x02 \x01(\x08\"&\n\x10\x42lockHeightReply\x12\x12\n\nnextHeight\x18\x01 \x01(\x04\"8\n\x12VotingPowerRequest\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\x12\x11\n\tgetActive\x18\x02 \x01(\x08\"!\n\x10VotingPowerReply\x12\r\n\x05power\x18\x01 \x01(\x04\" \n\x10\x42lockByIDRequest\x12\x0c\n\x04hash\x18\x01 \x01(\x0c\"+\n\x0e\x42lockByIDReply\x12\x19\n\x05\x62lock\x18\x01 \x01(\x0b\x32\n.API.Block\"\"\n\x0f\x44\x65legateRequest\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\"(\n\rDelegateReply\x12\x17\n\x0f\x64\x65legateAddress\x18\x01 \x01(\x0c\"/\n\x11PendingBlockReply\x12\x1a\n\x06\x62locks\x18\x01 \x03(\x0b\x32\n.API.Block\"?\n\x15UnacknowledgedTXReply\x12&\n\x0ctransactions\x18\x01 \x03(\x0b\x32\x10.API.Transaction\"&\n\rTXByIDRequest\x12\x15\n\rtransactionID\x18\x01 \x01(\x0c\"4\n\x0bTXByIDReply\x12%\n\x0btransaction\x18\x01 \x01(\x0b\x32\x10.API.Transaction\"1\n\x10TXByIndexRequest\x12\x0e\n\x06height\x18\x01 \x01(\x04\x12\r\n\x05index\x18\x02 \x01(\x04\"7\n\x0eTXByIndexReply\x12%\n\x0btransaction\x18\x01 \x01(\x0b\x32\x10.API.Transaction\"\x07\n\x05\x45mpty*!\n\x06sortBy\x12\x08\n\x04\x64\x61ta\x10\x00\x12\r\n\tdata_desc\x10\x01\x32\xa7\x05\n\x07Lattice\x12<\n\nGetBalance\x12\x17.LATTICE.BalanceRequest\x1a\x15.LATTICE.BalanceReply\x12H\n\x0eGetBlockHeight\x12\x1b.LATTICE.BlockHeightRequest\x1a\x19.LATTICE.BlockHeightReply\x12H\n\x0eGetVotingPower\x12\x1b.LATTICE.VotingPowerRequest\x1a\x19.LATTICE.VotingPowerReply\x12\x42\n\x0cGetBlockByID\x12\x19.LATTICE.BlockByIDRequest\x1a\x17.LATTICE.BlockByIDReply\x12?\n\x0bGetDelegate\x12\x18.LATTICE.DelegateRequest\x1a\x16.LATTICE.DelegateReply\x12>\n\x10GetPendingBlocks\x12\x0e.LATTICE.Empty\x1a\x1a.LATTICE.PendingBlockReply\x12?\n\tGetBlocks\x12\x19.LATTICE.GetBlocksRequest\x1a\x17.LATTICE.GetBlocksReply\x12\x45\n\x13GetUnacknowledgedTX\x12\x0e.LATTICE.Empty\x1a\x1e.LATTICE.UnacknowledgedTXReply\x12\x39\n\tGetTXByID\x12\x16.LATTICE.TXByIDRequest\x1a\x14.LATTICE.TXByIDReply\x12\x42\n\x0cGetTXByIndex\x12\x19.LATTICE.TXByIndexRequest\x1a\x17.LATTICE.TXByIndexReplyb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'node.rpc.lattice_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _SORTBY._serialized_start=892
-  _SORTBY._serialized_end=925
+  _SORTBY._serialized_start=920
+  _SORTBY._serialized_end=953
   _GETBLOCKSREQUEST._serialized_start=51
   _GETBLOCKSREQUEST._serialized_end=133
   _GETBLOCKSREPLY._serialized_start=135
-  _GETBLOCKSREPLY._serialized_end=151
-  _BALANCEREQUEST._serialized_start=153
-  _BALANCEREQUEST._serialized_end=186
-  _BALANCEREPLY._serialized_start=188
-  _BALANCEREPLY._serialized_end=219
-  _BLOCKHEIGHTREQUEST._serialized_start=221
-  _BLOCKHEIGHTREQUEST._serialized_end=275
-  _BLOCKHEIGHTREPLY._serialized_start=277
-  _BLOCKHEIGHTREPLY._serialized_end=315
-  _VOTINGPOWERREQUEST._serialized_start=317
-  _VOTINGPOWERREQUEST._serialized_end=373
-  _VOTINGPOWERREPLY._serialized_start=375
-  _VOTINGPOWERREPLY._serialized_end=408
-  _BLOCKBYIDREQUEST._serialized_start=410
-  _BLOCKBYIDREQUEST._serialized_end=442
-  _BLOCKBYIDREPLY._serialized_start=444
-  _BLOCKBYIDREPLY._serialized_end=487
-  _DELEGATEREQUEST._serialized_start=489
-  _DELEGATEREQUEST._serialized_end=523
-  _DELEGATEREPLY._serialized_start=525
-  _DELEGATEREPLY._serialized_end=565
-  _PENDINGBLOCKREPLY._serialized_start=567
-  _PENDINGBLOCKREPLY._serialized_end=614
-  _UNACKNOWLEDGEDTXREPLY._serialized_start=616
-  _UNACKNOWLEDGEDTXREPLY._serialized_end=679
-  _TXBYIDREQUEST._serialized_start=681
-  _TXBYIDREQUEST._serialized_end=719
-  _TXBYIDREPLY._serialized_start=721
-  _TXBYIDREPLY._serialized_end=773
-  _TXBYINDEXREQUEST._serialized_start=775
-  _TXBYINDEXREQUEST._serialized_end=824
-  _TXBYINDEXREPLY._serialized_start=826
-  _TXBYINDEXREPLY._serialized_end=881
-  _EMPTY._serialized_start=883
-  _EMPTY._serialized_end=890
-  _LATTICE._serialized_start=928
-  _LATTICE._serialized_end=1607
+  _GETBLOCKSREPLY._serialized_end=179
+  _BALANCEREQUEST._serialized_start=181
+  _BALANCEREQUEST._serialized_end=214
+  _BALANCEREPLY._serialized_start=216
+  _BALANCEREPLY._serialized_end=247
+  _BLOCKHEIGHTREQUEST._serialized_start=249
+  _BLOCKHEIGHTREQUEST._serialized_end=303
+  _BLOCKHEIGHTREPLY._serialized_start=305
+  _BLOCKHEIGHTREPLY._serialized_end=343
+  _VOTINGPOWERREQUEST._serialized_start=345
+  _VOTINGPOWERREQUEST._serialized_end=401
+  _VOTINGPOWERREPLY._serialized_start=403
+  _VOTINGPOWERREPLY._serialized_end=436
+  _BLOCKBYIDREQUEST._serialized_start=438
+  _BLOCKBYIDREQUEST._serialized_end=470
+  _BLOCKBYIDREPLY._serialized_start=472
+  _BLOCKBYIDREPLY._serialized_end=515
+  _DELEGATEREQUEST._serialized_start=517
+  _DELEGATEREQUEST._serialized_end=551
+  _DELEGATEREPLY._serialized_start=553
+  _DELEGATEREPLY._serialized_end=593
+  _PENDINGBLOCKREPLY._serialized_start=595
+  _PENDINGBLOCKREPLY._serialized_end=642
+  _UNACKNOWLEDGEDTXREPLY._serialized_start=644
+  _UNACKNOWLEDGEDTXREPLY._serialized_end=707
+  _TXBYIDREQUEST._serialized_start=709
+  _TXBYIDREQUEST._serialized_end=747
+  _TXBYIDREPLY._serialized_start=749
+  _TXBYIDREPLY._serialized_end=801
+  _TXBYINDEXREQUEST._serialized_start=803
+  _TXBYINDEXREQUEST._serialized_end=852
+  _TXBYINDEXREPLY._serialized_start=854
+  _TXBYINDEXREPLY._serialized_end=909
+  _EMPTY._serialized_start=911
+  _EMPTY._serialized_end=918
+  _LATTICE._serialized_start=956
+  _LATTICE._serialized_end=1635
 # @@protoc_insertion_point(module_scope)

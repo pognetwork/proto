@@ -38,7 +38,7 @@ message GetBlocksRequest {
   uint32 offset = 2;
   sortBy sortBy = 3;
 }
-message GetBlocksReply {}
+message GetBlocksReply { repeated API.Block blocks = 1; }
 
 message BalanceRequest {
   // Balance Request takes the address for query
