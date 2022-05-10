@@ -10,6 +10,7 @@
     - [BlockByIDRequest](#LATTICE-BlockByIDRequest)
     - [BlockHeightReply](#LATTICE-BlockHeightReply)
     - [BlockHeightRequest](#LATTICE-BlockHeightRequest)
+    - [BlockSpamIndexReply](#LATTICE-BlockSpamIndexReply)
     - [DelegateReply](#LATTICE-DelegateReply)
     - [DelegateRequest](#LATTICE-DelegateRequest)
     - [Empty](#LATTICE-Empty)
@@ -124,6 +125,21 @@
 | ----- | ---- | ----- | ----------- |
 | address | [bytes](#bytes) |  |  |
 | getNext | [bool](#bool) |  |  |
+
+
+
+
+
+
+<a name="LATTICE-BlockSpamIndexReply"></a>
+
+### BlockSpamIndexReply
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [float](#float) |  |  |
 
 
 
@@ -359,6 +375,8 @@
 | GetUnacknowledgedTX | [Empty](#LATTICE-Empty) | [UnacknowledgedTXReply](#LATTICE-UnacknowledgedTXReply) | GetUnacknowledgedTX gets a number of how many transactions are |
 | GetTXByID | [TXByIDRequest](#LATTICE-TXByIDRequest) | [TXByIDReply](#LATTICE-TXByIDReply) | GetTXByID uses a transaction ID to get a transaction |
 | GetTXByIndex | [TXByIndexRequest](#LATTICE-TXByIndexRequest) | [TXByIndexReply](#LATTICE-TXByIndexReply) | GetTXByIndex uses an index for inside a block to return a transaction |
+| GetBlockSpamIndex | [.API.RawBlock](#API-RawBlock) | [BlockSpamIndexReply](#LATTICE-BlockSpamIndexReply) | GetBlockSpamIndex |
+| SubmitBlock | [.API.RawBlock](#API-RawBlock) | [Empty](#LATTICE-Empty) | SubmitBlock |
 
  
 

@@ -26,12 +26,18 @@ service Lattice {
   rpc GetTXByID(TXByIDRequest) returns (TXByIDReply);
   // GetTXByIndex uses an index for inside a block to return a transaction
   rpc GetTXByIndex(TXByIndexRequest) returns (TXByIndexReply);
+  // GetBlockSpamIndex
+  rpc GetBlockSpamIndex(API.RawBlock) returns (BlockSpamIndexReply);
+  // SubmitBlock
+  rpc SubmitBlock(API.RawBlock) returns (Empty);
 }
 
 enum sortBy {
   data = 0;
   data_desc = 1;
 }
+
+message BlockSpamIndexReply { float value = 1; }
 
 message GetBlocksRequest {
   uint32 limit = 1;
