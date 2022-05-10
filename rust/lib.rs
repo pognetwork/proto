@@ -70,7 +70,7 @@ impl TryFrom<api::RawBlock> for api::SignedBlock {
 
 impl api::SignedBlock {
     pub fn get_id(&self) -> api::BlockID {
-        util::sha3(&self.data_raw)
+        util::sha3(util::concat_u8(&self.data_raw, &self.header.public_key))
     }
 
     pub fn new(header: api::BlockHeader, data: api::BlockData) -> Self {
