@@ -15,6 +15,8 @@ service Lattice {
   rpc GetDelegate(DelegateRequest) returns (DelegateReply);
   // GetPendingBlocks gets all blocks that havent been processed
   rpc GetPendingBlocks(Empty) returns (PendingBlockReply);
+  rpc GetUnclaimedTransactions(GetUnclaimedTransactionsRequest)
+      returns (GetUnclaimedTransactionsReply);
   rpc GetBlocks(GetBlocksRequest) returns (GetBlocksReply);
   // GetUnacknowledgedTX gets a number of how many transactions are
   // unacknowledged
@@ -32,6 +34,11 @@ service Lattice {
 enum sortBy {
   data = 0;
   data_desc = 1;
+}
+
+message GetUnclaimedTransactionsRequest { bytes address = 1; }
+message GetUnclaimedTransactionsReply {
+  repeated API.Transaction transactions = 1;
 }
 
 message BlockSpamIndexReply { float value = 1; }

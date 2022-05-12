@@ -8,14 +8,16 @@
     - [BalanceRequest](#LATTICE-BalanceRequest)
     - [BlockByIDReply](#LATTICE-BlockByIDReply)
     - [BlockByIDRequest](#LATTICE-BlockByIDRequest)
-    - [BlockHeightReply](#LATTICE-BlockHeightReply)
-    - [BlockHeightRequest](#LATTICE-BlockHeightRequest)
     - [BlockSpamIndexReply](#LATTICE-BlockSpamIndexReply)
     - [DelegateReply](#LATTICE-DelegateReply)
     - [DelegateRequest](#LATTICE-DelegateRequest)
     - [Empty](#LATTICE-Empty)
     - [GetBlocksReply](#LATTICE-GetBlocksReply)
     - [GetBlocksRequest](#LATTICE-GetBlocksRequest)
+    - [GetUnclaimedBlocksReply](#LATTICE-GetUnclaimedBlocksReply)
+    - [GetUnclaimedBlocksRequest](#LATTICE-GetUnclaimedBlocksRequest)
+    - [LatestBlockReply](#LATTICE-LatestBlockReply)
+    - [LatestBlockRequest](#LATTICE-LatestBlockRequest)
     - [PendingBlockReply](#LATTICE-PendingBlockReply)
     - [TXByIDReply](#LATTICE-TXByIDReply)
     - [TXByIDRequest](#LATTICE-TXByIDRequest)
@@ -94,37 +96,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | hash | [bytes](#bytes) |  |  |
-
-
-
-
-
-
-<a name="LATTICE-BlockHeightReply"></a>
-
-### BlockHeightReply
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| nextHeight | [uint64](#uint64) |  |  |
-
-
-
-
-
-
-<a name="LATTICE-BlockHeightRequest"></a>
-
-### BlockHeightRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| address | [bytes](#bytes) |  |  |
-| getNext | [bool](#bool) |  |  |
 
 
 
@@ -213,6 +184,66 @@
 | offset | [uint32](#uint32) |  |  |
 | sortBy | [sortBy](#LATTICE-sortBy) |  |  |
 | address | [bytes](#bytes) | optional | optional, get only blocks by a specific account |
+
+
+
+
+
+
+<a name="LATTICE-GetUnclaimedBlocksReply"></a>
+
+### GetUnclaimedBlocksReply
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| transactions | [API.Transaction](#API-Transaction) | repeated |  |
+
+
+
+
+
+
+<a name="LATTICE-GetUnclaimedBlocksRequest"></a>
+
+### GetUnclaimedBlocksRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| address | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="LATTICE-LatestBlockReply"></a>
+
+### LatestBlockReply
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| block | [API.Block](#API-Block) |  |  |
+
+
+
+
+
+
+<a name="LATTICE-LatestBlockRequest"></a>
+
+### LatestBlockRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| address | [bytes](#bytes) |  |  |
 
 
 
@@ -371,11 +402,12 @@
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | GetBalance | [BalanceRequest](#LATTICE-BalanceRequest) | [BalanceReply](#LATTICE-BalanceReply) | GetBalance accepts BalanceRequests and returns BalanceReplies |
-| GetBlockHeight | [BlockHeightRequest](#LATTICE-BlockHeightRequest) | [BlockHeightReply](#LATTICE-BlockHeightReply) | GetNextBlockHeight uses an address to get the latest block index to then return the next index |
+| GetLatestBlock | [LatestBlockRequest](#LATTICE-LatestBlockRequest) | [LatestBlockReply](#LATTICE-LatestBlockReply) |  |
 | GetVotingPower | [VotingPowerRequest](#LATTICE-VotingPowerRequest) | [VotingPowerReply](#LATTICE-VotingPowerReply) | GetVotingPower uses an address to get the voting power of an account |
 | GetBlockByID | [BlockByIDRequest](#LATTICE-BlockByIDRequest) | [BlockByIDReply](#LATTICE-BlockByIDReply) | GetBlockByID uses the hash of a block to get the data |
 | GetDelegate | [DelegateRequest](#LATTICE-DelegateRequest) | [DelegateReply](#LATTICE-DelegateReply) | GetDelegate uses an account address to return a address of the delegate |
 | GetPendingBlocks | [Empty](#LATTICE-Empty) | [PendingBlockReply](#LATTICE-PendingBlockReply) | GetPendingBlocks gets all blocks that havent been processed |
+| GetUnclaimedBlocks | [GetUnclaimedBlocksRequest](#LATTICE-GetUnclaimedBlocksRequest) | [GetUnclaimedBlocksReply](#LATTICE-GetUnclaimedBlocksReply) |  |
 | GetBlocks | [GetBlocksRequest](#LATTICE-GetBlocksRequest) | [GetBlocksReply](#LATTICE-GetBlocksReply) |  |
 | GetUnacknowledgedTX | [Empty](#LATTICE-Empty) | [UnacknowledgedTXReply](#LATTICE-UnacknowledgedTXReply) | GetUnacknowledgedTX gets a number of how many transactions are unacknowledged |
 | GetTXByID | [TXByIDRequest](#LATTICE-TXByIDRequest) | [TXByIDReply](#LATTICE-TXByIDReply) | GetTXByID uses a transaction ID to get a transaction |
