@@ -73,7 +73,10 @@ message VotingPowerReply { uint64 power = 1; }
 
 message BlockByIDRequest { bytes hash = 1; }
 
-message BlockByIDReply { API.Block block = 1; }
+message BlockByIDReply {
+  API.Block block = 1;
+  bytes address = 2;
+}
 
 message DelegateRequest { bytes address = 1; }
 
@@ -85,13 +88,21 @@ message UnacknowledgedTXReply { repeated API.Transaction transactions = 1; }
 
 message TXByIDRequest { bytes transactionID = 1; }
 
-message TXByIDReply { API.Transaction transaction = 1; }
+message TXByIDReply {
+  API.Transaction transaction = 1;
+  bytes block = 2;
+  bytes address = 3;
+}
 
 message TXByIndexRequest {
   uint64 height = 1;
   uint64 index = 2;
 }
 
-message TXByIndexReply { API.Transaction transaction = 1; }
+message TXByIndexReply {
+  API.Transaction transaction = 1;
+  bytes block = 2;
+  bytes address = 3;
+}
 
 message Empty {}
