@@ -41,7 +41,7 @@ message GetUnclaimedTransactionsReply { repeated Tx data = 1; }
 
 message Tx {
   API.Transaction transaction = 1;
-  API.Block block = 2;
+  bytes transaction_id = 2;
 }
 
 message BlockSpamIndexReply { float value = 1; }
