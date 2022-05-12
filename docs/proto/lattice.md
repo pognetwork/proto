@@ -243,6 +243,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | transaction | [API.Transaction](#API-Transaction) |  |  |
+| block | [bytes](#bytes) |  |  |
+| address | [bytes](#bytes) |  |  |
 
 
 
@@ -273,6 +275,8 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | transaction | [API.Transaction](#API-Transaction) |  |  |
+| block | [bytes](#bytes) |  |  |
+| address | [bytes](#bytes) |  |  |
 
 
 

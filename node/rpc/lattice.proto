@@ -73,10 +73,7 @@ message VotingPowerReply { uint64 power = 1; }
 
 message BlockByIDRequest { bytes hash = 1; }
 
-message BlockByIDReply {
-  API.Block block = 1;
-  bytes address = 2;
-}
+message BlockByIDReply { API.Block block = 1; }
 
 message DelegateRequest { bytes address = 1; }
 
