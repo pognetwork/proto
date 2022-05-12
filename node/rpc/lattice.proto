@@ -6,9 +6,7 @@ import "node/api.proto";
 service Lattice {
   // GetBalance accepts BalanceRequests and returns BalanceReplies
   rpc GetBalance(BalanceRequest) returns (BalanceReply);
-  // GetNextBlockHeight uses an address to get the latest block index to then
-  // return the next index
-  rpc GetBlockHeight(BlockHeightRequest) returns (BlockHeightReply);
+  rpc GetLatestBlock(LatestBlockRequest) returns (LatestBlockReply);
   // GetVotingPower uses an address to get the voting power of an account
   rpc GetVotingPower(VotingPowerRequest) returns (VotingPowerReply);
   // GetBlockByID uses the hash of a block to get the data
@@ -57,12 +55,8 @@ message BalanceReply {
   uint64 balance = 1;
 }
 
-message BlockHeightRequest {
-  bytes address = 1;
-  bool getNext = 2;
-}
-
-message BlockHeightReply { uint64 nextHeight = 1; }
+message LatestBlockRequest { bytes address = 1; }
+message LatestBlockReply { API.Block block = 1; }
 
 message VotingPowerRequest {
   bytes address = 1;
