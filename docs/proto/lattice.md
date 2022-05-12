@@ -212,7 +212,7 @@
 | limit | [uint32](#uint32) |  |  |
 | offset | [uint32](#uint32) |  |  |
 | sortBy | [sortBy](#LATTICE-sortBy) |  |  |
-| address | [bytes](#bytes) |  | optional, get only blocks by a specific account |
+| address | [bytes](#bytes) | optional | optional, get only blocks by a specific account |
 
 
 

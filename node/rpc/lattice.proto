@@ -42,7 +42,7 @@ message GetBlocksRequest {
   uint32 limit = 1;
   uint32 offset = 2;
   sortBy sortBy = 3;
-  bytes address = 4; // optional, get only blocks by a specific account
+  optional bytes address = 4; // optional, get only blocks by a specific account
 }
 
 message GetBlocksReply { repeated API.Block blocks = 1; }
