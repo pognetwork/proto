@@ -37,8 +37,11 @@ enum sortBy {
 }
 
 message GetUnclaimedTransactionsRequest { bytes address = 1; }
-message GetUnclaimedTransactionsReply {
-  repeated API.Transaction transactions = 1;
+message GetUnclaimedTransactionsReply { repeated Tx data = 1; }
+
+message Tx {
+  API.Transaction transaction = 1;
+  API.Block block = 2;
 }
 
 message BlockSpamIndexReply { float value = 1; }
